@@ -1,0 +1,3061 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+		<title>WhatsAppHouse &#8211; Tu tarjeta digital tipo web app al alcance de tu bolsillo y directo a tu whatsapp, administrable y 100% para móviles.</title>
+<meta name='robots' content='max-image-preview:large' />
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Bloquear scroll desde el inicio */
+    body {
+        overflow: hidden !important;
+    }
+
+    #watshouse-preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #1a1a2e;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 99999;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    #watshouse-preloader.hidden {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .watshouse-preloader-content {
+        text-align: center;
+        color: #fff;
+    }
+
+    .watshouse-icon-container {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 30px;
+    }
+
+    .watshouse-house-icon {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    .watshouse-house-outline {
+        fill: none;
+        stroke: #47d747;
+        stroke-width: 2;
+        stroke-dasharray: 400;
+        stroke-dashoffset: 400;
+        animation: watshouseDrawStroke 2s ease-in-out infinite;
+    }
+
+    .watshouse-house-glow-blur {
+        fill: none;
+        stroke: #47d747;
+        stroke-width: 8;
+        stroke-dasharray: 400;
+        stroke-dashoffset: 400;
+        animation: watshouseGlowStroke 2s ease-in-out infinite;
+        filter: blur(8px);
+        opacity: 0;
+    }
+
+    .watshouse-house-glow {
+        fill: none;
+        stroke: #47d747;
+        stroke-width: 5;
+        stroke-dasharray: 400;
+        stroke-dashoffset: 400;
+        animation: watshouseGlowStroke 2s ease-in-out infinite;
+        opacity: 0;
+    }
+
+    @keyframes watshouseDrawStroke {
+        0% {
+            stroke-dashoffset: 400;
+        }
+        50% {
+            stroke-dashoffset: 0;
+        }
+        100% {
+            stroke-dashoffset: -400;
+        }
+    }
+
+    @keyframes watshouseGlowStroke {
+        0% {
+            stroke-dashoffset: 400;
+            opacity: 0;
+        }
+        25% {
+            opacity: 1;
+        }
+        50% {
+            stroke-dashoffset: 0;
+            opacity: 1;
+        }
+        75% {
+            opacity: 0.5;
+        }
+        100% {
+            stroke-dashoffset: -400;
+            opacity: 0;
+        }
+    }
+
+    .watshouse-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: #fff;
+        letter-spacing: 1px;
+    }
+
+    .watshouse-description {
+        font-size: 1rem;
+        color: #94a3b8;
+        max-width: 400px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+
+    .watshouse-loading-dots {
+        display: inline-block;
+        margin-left: 5px;
+    }
+
+    .watshouse-loading-dots span {
+        animation: watshouseBlink 1.4s infinite;
+        opacity: 0;
+    }
+
+    .watshouse-loading-dots span:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+
+    .watshouse-loading-dots span:nth-child(3) {
+        animation-delay: 0.4s;
+    }
+
+    @keyframes watshouseBlink {
+        0%, 80%, 100% {
+            opacity: 0;
+        }
+        40% {
+            opacity: 1;
+        }
+    }
+
+    /* Cuando se oculta el preloader, restaurar scroll */
+    body.watshouse-loaded {
+        overflow: auto !important;
+    }
+
+    @media (max-width: 768px) {
+        .watshouse-title {
+            font-size: 2rem;
+        }
+        .watshouse-description {
+            font-size: 0.9rem;
+            padding: 0 20px;
+        }
+        .watshouse-icon-container {
+            width: 100px;
+            height: 100px;
+        }
+    }
+</style>
+<link rel="alternate" type="application/rss+xml" title="WhatsHouse &raquo; Feed" href="https://creaciones19.github.io/servicios-web/" />
+<link rel="alternate" type="application/rss+xml" title="WhatsHouse &raquo; Feed de los comentarios" href="https://creaciones19.github.io/servicios-web/" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://creaciones19.github.io/servicios-web/" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://creaciones19.github.io/servicios-web/" />
+
+<style id='wp-img-auto-sizes-contain-inline-css'>
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+
+<link rel='stylesheet' id='xoo-aff-style-css' href='https://creaciones19.github.io/servicios-web/' media='all' />
+
+<style id='xoo-aff-style-inline-css'>
+
+.xoo-aff-input-group .xoo-aff-input-icon{
+	background-color:  #eee;
+	color: #555;
+	max-width: 40px;
+	min-width: 40px;
+	border-color: #cccccc;
+	border-width: 1px;
+	font-size: 14px;
+}
+.xoo-aff-group{
+	margin-bottom: 30px;
+}
+
+.xoo-aff-group input[type="text"], .xoo-aff-group input[type="password"], .xoo-aff-group input[type="email"], .xoo-aff-group input[type="number"], .xoo-aff-group select, .xoo-aff-group select + .select2, .xoo-aff-group input[type="tel"], .xoo-aff-group input[type="file"]{
+	background-color: #fff;
+	color: #777;
+	border-width: 1px;
+	border-color: #cccccc;
+	height: 50px;
+}
+
+
+.xoo-aff-group input[type="file"]{
+	line-height: calc(50px - 13px);
+}
+
+
+
+.xoo-aff-group input[type="text"]::placeholder, .xoo-aff-group input[type="password"]::placeholder, .xoo-aff-group input[type="email"]::placeholder, .xoo-aff-group input[type="number"]::placeholder, .xoo-aff-group select::placeholder, .xoo-aff-group input[type="tel"]::placeholder, .xoo-aff-group .select2-selection__rendered, .xoo-aff-group .select2-container--default .select2-selection--single .select2-selection__rendered, .xoo-aff-group input[type="file"]::placeholder, .xoo-aff-group input::file-selector-button{
+	color: #777;
+}
+
+.xoo-aff-group input[type="text"]:focus, .xoo-aff-group input[type="password"]:focus, .xoo-aff-group input[type="email"]:focus, .xoo-aff-group input[type="number"]:focus, .xoo-aff-group select:focus, .xoo-aff-group select + .select2:focus, .xoo-aff-group input[type="tel"]:focus, .xoo-aff-group input[type="file"]:focus{
+	background-color: #ededed;
+	color: #000;
+}
+
+[placeholder]:focus::-webkit-input-placeholder{
+	color: #000!important;
+}
+
+
+.xoo-aff-input-icon + input[type="text"], .xoo-aff-input-icon + input[type="password"], .xoo-aff-input-icon + input[type="email"], .xoo-aff-input-icon + input[type="number"], .xoo-aff-input-icon + select, .xoo-aff-input-icon + select + .select2,  .xoo-aff-input-icon + input[type="tel"], .xoo-aff-input-icon + input[type="file"]{
+	border-bottom-left-radius: 0;
+	border-top-left-radius: 0;
+}
+
+
+/*# sourceURL=xoo-aff-style-inline-css */
+</style>
+<link rel='stylesheet' id='xoo-aff-font-awesome5-css' href='https://wh.idcardqr.com/wp-content/plugins/easy-login-woocommerce/xoo-form-fields-fw/lib/fontawesome5/css/all.min.css?ver=6.9.1' media='all' />
+<link rel='stylesheet' id='hfe-widgets-style-css' href='https://wh.idcardqr.com/wp-content/plugins/header-footer-elementor/inc/widgets-css/frontend.css?ver=2.8.3' media='all' />
+<link rel='stylesheet' id='dce-dynamic-visibility-style-css' href='https://wh.idcardqr.com/wp-content/plugins/dynamic-visibility-for-elementor/assets/css/dynamic-visibility.css?ver=6.0.2' media='all' />
+<style id='wp-emoji-styles-inline-css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id='classic-theme-styles-inline-css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+<style id='global-styles-inline-css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--neve-link-color: var(--nv-primary-accent);--wp--preset--color--neve-link-hover-color: var(--nv-secondary-accent);--wp--preset--color--nv-site-bg: var(--nv-site-bg);--wp--preset--color--nv-light-bg: var(--nv-light-bg);--wp--preset--color--nv-dark-bg: var(--nv-dark-bg);--wp--preset--color--neve-text-color: var(--nv-text-color);--wp--preset--color--nv-text-dark-bg: var(--nv-text-dark-bg);--wp--preset--color--nv-c-1: var(--nv-c-1);--wp--preset--color--nv-c-2: var(--nv-c-2);--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-neve-link-color-color{color: var(--wp--preset--color--neve-link-color) !important;}.has-neve-link-hover-color-color{color: var(--wp--preset--color--neve-link-hover-color) !important;}.has-nv-site-bg-color{color: var(--wp--preset--color--nv-site-bg) !important;}.has-nv-light-bg-color{color: var(--wp--preset--color--nv-light-bg) !important;}.has-nv-dark-bg-color{color: var(--wp--preset--color--nv-dark-bg) !important;}.has-neve-text-color-color{color: var(--wp--preset--color--neve-text-color) !important;}.has-nv-text-dark-bg-color{color: var(--wp--preset--color--nv-text-dark-bg) !important;}.has-nv-c-1-color{color: var(--wp--preset--color--nv-c-1) !important;}.has-nv-c-2-color{color: var(--wp--preset--color--nv-c-2) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-neve-link-color-background-color{background-color: var(--wp--preset--color--neve-link-color) !important;}.has-neve-link-hover-color-background-color{background-color: var(--wp--preset--color--neve-link-hover-color) !important;}.has-nv-site-bg-background-color{background-color: var(--wp--preset--color--nv-site-bg) !important;}.has-nv-light-bg-background-color{background-color: var(--wp--preset--color--nv-light-bg) !important;}.has-nv-dark-bg-background-color{background-color: var(--wp--preset--color--nv-dark-bg) !important;}.has-neve-text-color-background-color{background-color: var(--wp--preset--color--neve-text-color) !important;}.has-nv-text-dark-bg-background-color{background-color: var(--wp--preset--color--nv-text-dark-bg) !important;}.has-nv-c-1-background-color{background-color: var(--wp--preset--color--nv-c-1) !important;}.has-nv-c-2-background-color{background-color: var(--wp--preset--color--nv-c-2) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-neve-link-color-border-color{border-color: var(--wp--preset--color--neve-link-color) !important;}.has-neve-link-hover-color-border-color{border-color: var(--wp--preset--color--neve-link-hover-color) !important;}.has-nv-site-bg-border-color{border-color: var(--wp--preset--color--nv-site-bg) !important;}.has-nv-light-bg-border-color{border-color: var(--wp--preset--color--nv-light-bg) !important;}.has-nv-dark-bg-border-color{border-color: var(--wp--preset--color--nv-dark-bg) !important;}.has-neve-text-color-border-color{border-color: var(--wp--preset--color--neve-text-color) !important;}.has-nv-text-dark-bg-border-color{border-color: var(--wp--preset--color--nv-text-dark-bg) !important;}.has-nv-c-1-border-color{border-color: var(--wp--preset--color--nv-c-1) !important;}.has-nv-c-2-border-color{border-color: var(--wp--preset--color--nv-c-2) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-term-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-term-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+<link rel='stylesheet' id='xoo-el-style-css' href='https://wh.idcardqr.com/wp-content/plugins/easy-login-woocommerce/assets/css/xoo-el-style.css?ver=3.0.4' media='all' />
+<style id='xoo-el-style-inline-css'>
+
+	.xoo-el-form-container button.btn.button.xoo-el-action-btn{
+		background-color: #000000;
+		color: #ffffff;
+		font-weight: 600;
+		font-size: 15px;
+		height: 40px;
+	}
+
+.xoo-el-container:not(.xoo-el-style-slider) .xoo-el-inmodal{
+	max-width: 800px;
+	max-height: 650px;
+}
+
+.xoo-el-style-slider .xoo-el-modal{
+	transform: translateX(800px);
+	max-width: 800px;
+}
+
+
+
+.xoo-el-main, .xoo-el-main a , .xoo-el-main label{
+	color: #000000;
+}
+.xoo-el-srcont{
+	background-color: #ffffff;
+}
+.xoo-el-form-container ul.xoo-el-tabs li.xoo-el-active {
+	background-color: #000000;
+	color: #ffffff;
+}
+.xoo-el-form-container ul.xoo-el-tabs li{
+	background-color: #eeeeee;
+	color: #000000;
+	font-size: 16px;
+	padding: 12px 20px;
+}
+.xoo-el-main{
+	padding: 40px 30px;
+}
+
+.xoo-el-form-container button.xoo-el-action-btn:not(.button){
+    font-weight: 600;
+    font-size: 15px;
+}
+
+
+
+	.xoo-el-modal:before {
+		vertical-align: middle;
+	}
+
+	.xoo-el-style-slider .xoo-el-srcont {
+		justify-content: center;
+	}
+
+	.xoo-el-style-slider .xoo-el-main{
+		padding-top: 10px;
+		padding-bottom: 10px; 
+	}
+
+
+
+
+
+.xoo-el-popup-active .xoo-el-opac{
+    opacity: 0.7;
+    background-color: #000000;
+}
+/*iamgen arriba de la taejetas de mis datos */
+.wh-hero {
+  width: 100%;
+  height: 420px;
+  background: 
+    linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)),
+    url('headercdmaderas.png') center/cover no-repeat;
+}
+.wh-asesor-card {
+  position: relative;
+  margin: -180px auto 30px !important; /* 🔥 más arriba */
+  z-index: 10;
+  max-width: 600px;
+}
+/* 🔥 cubo en donde esta la foto del asesor*/
+/* =========================
+   TARJETA ASESOR
+========================= */
+.wh-asesor-card {
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* =========================
+   SLIDER
+========================= */
+.wh-asesor-card .slider {
+  width: 100%;
+  height: 280px;
+
+  margin-top: 15px;
+  margin-bottom: 20px;
+
+  border-radius: 14px;
+  overflow: hidden;
+
+  position: relative;
+  perspective: 1200px;
+}
+
+/* =========================
+   SLIDES
+========================= */
+.wh-asesor-card .slide {
+  position: absolute;
+  inset: 0;
+
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+
+  z-index: 1;
+}
+
+/* slide siguiente */
+.wh-asesor-card .slide.next {
+  z-index: 2;
+}
+
+/* =========================
+   IMÁGENES (AJUSTE CLAVE)
+========================= */
+.wh-asesor-card .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* 👈 NO recorta */
+  display: block;
+}
+
+/* =========================
+   SLICES
+========================= */
+.wh-asesor-card .slice {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 33.333%;
+
+  background-size: contain; /* 👈 igual que imagen */
+  background-repeat: no-repeat;
+  background-position: center;
+
+  transform-origin: center;
+  transform-style: preserve-3d;
+
+  transition: transform 1s ease-in-out;
+  backface-visibility: hidden;
+}
+
+/* POSICIÓN */
+.wh-asesor-card .slice:nth-child(1) { left: 0%; }
+.wh-asesor-card .slice:nth-child(2) { left: 33.333%; }
+.wh-asesor-card .slice:nth-child(3) { left: 66.666%; }
+/*# sourceURL=xoo-el-style-inline-css */
+</style>
+<link rel='stylesheet' id='xoo-el-fonts-css' href='https://wh.idcardqr.com/wp-content/plugins/easy-login-woocommerce/assets/css/xoo-el-fonts.css?ver=3.0.4' media='all' />
+<link rel='stylesheet' id='hfe-style-css' href='https://wh.idcardqr.com/wp-content/plugins/header-footer-elementor/assets/css/header-footer-elementor.css?ver=2.8.3' media='all' />
+<link rel='stylesheet' id='elementor-frontend-css' href='https://wh.idcardqr.com/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.35.0' media='all' />
+<link rel='stylesheet' id='elementor-post-6-css' href='https://wh.idcardqr.com/wp-content/uploads/elementor/css/post-6.css?ver=1772607819' media='all' />
+<link rel='stylesheet' id='elementor-post-10-css' href='https://wh.idcardqr.com/wp-content/uploads/elementor/css/post-10.css?ver=1772607819' media='all' />
+<link rel='stylesheet' id='elementor-post-23-css' href='https://wh.idcardqr.com/wp-content/uploads/elementor/css/post-23.css?ver=1772607819' media='all' />
+<link rel='stylesheet' id='elementor-post-83-css' href='https://wh.idcardqr.com/wp-content/uploads/elementor/css/post-83.css?ver=1772607819' media='all' />
+<link rel='stylesheet' id='neve-style-css' href='https://wh.idcardqr.com/wp-content/themes/neve/style-main-new.min.css?ver=4.2.2' media='all' />
+<style id='neve-style-inline-css'>
+.is-menu-sidebar .header-menu-sidebar { visibility: visible; }.is-menu-sidebar.menu_sidebar_slide_left .header-menu-sidebar { transform: translate3d(0, 0, 0); left: 0; }.is-menu-sidebar.menu_sidebar_slide_right .header-menu-sidebar { transform: translate3d(0, 0, 0); right: 0; }.is-menu-sidebar.menu_sidebar_pull_right .header-menu-sidebar, .is-menu-sidebar.menu_sidebar_pull_left .header-menu-sidebar { transform: translateX(0); }.is-menu-sidebar.menu_sidebar_dropdown .header-menu-sidebar { height: auto; }.is-menu-sidebar.menu_sidebar_dropdown .header-menu-sidebar-inner { max-height: 400px; padding: 20px 0; }.is-menu-sidebar.menu_sidebar_full_canvas .header-menu-sidebar { opacity: 1; }.header-menu-sidebar .menu-item-nav-search:not(.floating) { pointer-events: none; }.header-menu-sidebar .menu-item-nav-search .is-menu-sidebar { pointer-events: unset; }@media screen and (max-width: 960px) { .builder-item.cr .item--inner { --textalign: center; --justify: center; } }
+.nv-meta-list li.meta:not(:last-child):after { content:"/" }.nv-meta-list .no-mobile{
+			display:none;
+		}.nv-meta-list li.last::after{
+			content: ""!important;
+		}@media (min-width: 769px) {
+			.nv-meta-list .no-mobile {
+				display: inline-block;
+			}
+			.nv-meta-list li.last:not(:last-child)::after {
+		 		content: "/" !important;
+			}
+		}
+ :root{ --container: 748px;--postwidth:100%; --primarybtnbg: var(--nv-primary-accent); --primarybtnhoverbg: var(--nv-primary-accent); --primarybtncolor: #fff; --secondarybtncolor: var(--nv-primary-accent); --primarybtnhovercolor: #fff; --secondarybtnhovercolor: var(--nv-primary-accent);--primarybtnborderradius:3px;--secondarybtnborderradius:3px;--secondarybtnborderwidth:3px;--btnpadding:13px 15px;--primarybtnpadding:13px 15px;--secondarybtnpadding:calc(13px - 3px) calc(15px - 3px); --bodyfontfamily: Arial,Helvetica,sans-serif; --bodyfontsize: 15px; --bodylineheight: 1.6; --bodyletterspacing: 0px; --bodyfontweight: 400; --h1fontsize: 36px; --h1fontweight: 700; --h1lineheight: 1.2; --h1letterspacing: 0px; --h1texttransform: none; --h2fontsize: 28px; --h2fontweight: 700; --h2lineheight: 1.3; --h2letterspacing: 0px; --h2texttransform: none; --h3fontsize: 24px; --h3fontweight: 700; --h3lineheight: 1.4; --h3letterspacing: 0px; --h3texttransform: none; --h4fontsize: 20px; --h4fontweight: 700; --h4lineheight: 1.6; --h4letterspacing: 0px; --h4texttransform: none; --h5fontsize: 16px; --h5fontweight: 700; --h5lineheight: 1.6; --h5letterspacing: 0px; --h5texttransform: none; --h6fontsize: 14px; --h6fontweight: 700; --h6lineheight: 1.6; --h6letterspacing: 0px; --h6texttransform: none;--formfieldborderwidth:2px;--formfieldborderradius:3px; --formfieldbgcolor: var(--nv-site-bg); --formfieldbordercolor: #dddddd; --formfieldcolor: var(--nv-text-color);--formfieldpadding:10px 12px; } .nv-post-thumbnail-wrap img{ aspect-ratio: 4/3; object-fit: cover; } .layout-grid .nv-post-thumbnail-wrap{ margin-right:-25px;margin-left:-25px; } .nv-index-posts{ --borderradius:8px;--padding:25px 25px 25px 25px;--cardboxshadow:0 0 2px 0 rgba(0,0,0,0.15); --cardbgcolor: var(--nv-site-bg); --cardcolor: var(--nv-text-color); } .single-post-container .alignfull > [class*="__inner-container"], .single-post-container .alignwide > [class*="__inner-container"]{ max-width:718px } .nv-meta-list{ --avatarsize: 20px; } .single .nv-meta-list{ --avatarsize: 20px; } .nv-post-cover{ --height: 250px;--padding:40px 15px;--justify: flex-start; --textalign: left; --valign: center; } .nv-post-cover .nv-title-meta-wrap, .nv-page-title-wrap, .entry-header{ --textalign: left; } .nv-is-boxed.nv-title-meta-wrap{ --padding:40px 15px; --bgcolor: var(--nv-dark-bg); } .nv-overlay{ --opacity: 50; --blendmode: normal; } .nv-is-boxed.nv-comments-wrap{ --padding:20px; } .nv-is-boxed.comment-respond{ --padding:20px; } .single:not(.single-product), .page{ --c-vspace:0 0 0 0;; } .scroll-to-top{ --color: #c2c2c2;--padding:8px 10px; --borderradius: 200px; --bgcolor: #1f1f1f; --hovercolor: var(--nv-text-dark-bg); --hoverbgcolor: #232323;--size:16px; } .global-styled{ --bgcolor: var(--nv-site-bg); } .header-top{ --rowbcolor: var(--nv-light-bg); --color: var(--nv-text-color); --bgcolor: var(--nv-site-bg); } .header-main{ --rowbcolor: var(--nv-light-bg); --color: var(--nv-text-color); --bgcolor: var(--nv-site-bg); } .header-bottom{ --rowbcolor: var(--nv-light-bg); --color: var(--nv-text-color); --bgcolor: var(--nv-site-bg); } .header-menu-sidebar-bg{ --justify: flex-start; --textalign: left;--flexg: 1;--wrapdropdownwidth: auto; --color: var(--nv-text-color); --bgcolor: var(--nv-site-bg); } .header-menu-sidebar{ width: 360px; } .builder-item--logo{ --maxwidth: 120px; --fs: 24px;--padding:10px 0;--margin:0; --textalign: left;--justify: flex-start; } .builder-item--nav-icon,.header-menu-sidebar .close-sidebar-panel .navbar-toggle{ --borderradius:0; } .builder-item--nav-icon{ --label-margin:0 5px 0 0;;--padding:10px 15px;--margin:0; } .builder-item--primary-menu{ --hovercolor: var(--nv-secondary-accent); --hovertextcolor: var(--nv-text-color); --activecolor: var(--nv-primary-accent); --spacing: 20px; --height: 25px;--padding:0;--margin:0; --fontsize: 1em; --lineheight: 1.6; --letterspacing: 0px; --fontweight: 500; --texttransform: none; --iconsize: 1em; } .hfg-is-group.has-primary-menu .inherit-ff{ --inheritedfw: 500; } .footer-top-inner .row{ grid-template-columns:1fr 1fr 1fr; --valign: flex-start; } .footer-top{ --rowbcolor: var(--nv-light-bg); --color: var(--nv-text-color); --bgcolor: var(--nv-site-bg); } .footer-main-inner .row{ grid-template-columns:1fr 1fr 1fr; --valign: flex-start; } .footer-main{ --rowbcolor: var(--nv-light-bg); --color: var(--nv-text-color); --bgcolor: var(--nv-site-bg); } .footer-bottom-inner .row{ grid-template-columns:1fr 1fr 1fr; --valign: flex-start; } .footer-bottom{ --rowbcolor: var(--nv-light-bg); --color: var(--nv-text-dark-bg); --bgcolor: var(--nv-dark-bg); } @media(min-width: 576px){ :root{ --container: 992px;--postwidth:50%;--btnpadding:13px 15px;--primarybtnpadding:13px 15px;--secondarybtnpadding:calc(13px - 3px) calc(15px - 3px); --bodyfontsize: 16px; --bodylineheight: 1.6; --bodyletterspacing: 0px; --h1fontsize: 38px; --h1lineheight: 1.2; --h1letterspacing: 0px; --h2fontsize: 30px; --h2lineheight: 1.2; --h2letterspacing: 0px; --h3fontsize: 26px; --h3lineheight: 1.4; --h3letterspacing: 0px; --h4fontsize: 22px; --h4lineheight: 1.5; --h4letterspacing: 0px; --h5fontsize: 18px; --h5lineheight: 1.6; --h5letterspacing: 0px; --h6fontsize: 14px; --h6lineheight: 1.6; --h6letterspacing: 0px; } .layout-grid .nv-post-thumbnail-wrap{ margin-right:-25px;margin-left:-25px; } .nv-index-posts{ --padding:25px 25px 25px 25px; } .single-post-container .alignfull > [class*="__inner-container"], .single-post-container .alignwide > [class*="__inner-container"]{ max-width:962px } .nv-meta-list{ --avatarsize: 20px; } .single .nv-meta-list{ --avatarsize: 20px; } .nv-post-cover{ --height: 320px;--padding:60px 30px;--justify: flex-start; --textalign: left; --valign: center; } .nv-post-cover .nv-title-meta-wrap, .nv-page-title-wrap, .entry-header{ --textalign: left; } .nv-is-boxed.nv-title-meta-wrap{ --padding:60px 30px; } .nv-is-boxed.nv-comments-wrap{ --padding:30px; } .nv-is-boxed.comment-respond{ --padding:30px; } .single:not(.single-product), .page{ --c-vspace:0 0 0 0;; } .scroll-to-top{ --padding:8px 10px;--size:16px; } .header-menu-sidebar-bg{ --justify: flex-start; --textalign: left;--flexg: 1;--wrapdropdownwidth: auto; } .header-menu-sidebar{ width: 360px; } .builder-item--logo{ --maxwidth: 120px; --fs: 24px;--padding:10px 0;--margin:0; --textalign: left;--justify: flex-start; } .builder-item--nav-icon{ --label-margin:0 5px 0 0;;--padding:10px 15px;--margin:0; } .builder-item--primary-menu{ --spacing: 20px; --height: 25px;--padding:0;--margin:0; --fontsize: 1em; --lineheight: 1.6; --letterspacing: 0px; --iconsize: 1em; } }@media(min-width: 960px){ :root{ --container: 1170px;--postwidth:33.333333333333%;--btnpadding:13px 15px;--primarybtnpadding:13px 15px;--secondarybtnpadding:calc(13px - 3px) calc(15px - 3px); --bodyfontsize: 16px; --bodylineheight: 1.7; --bodyletterspacing: 0px; --h1fontsize: 40px; --h1lineheight: 1.1; --h1letterspacing: 0px; --h2fontsize: 32px; --h2lineheight: 1.2; --h2letterspacing: 0px; --h3fontsize: 28px; --h3lineheight: 1.4; --h3letterspacing: 0px; --h4fontsize: 24px; --h4lineheight: 1.5; --h4letterspacing: 0px; --h5fontsize: 20px; --h5lineheight: 1.6; --h5letterspacing: 0px; --h6fontsize: 16px; --h6lineheight: 1.6; --h6letterspacing: 0px; } .layout-grid .nv-post-thumbnail-wrap{ margin-right:-25px;margin-left:-25px; } .nv-index-posts{ --padding:25px 25px 25px 25px; } body:not(.single):not(.archive):not(.blog):not(.search):not(.error404) .neve-main > .container .col, body.post-type-archive-course .neve-
+ 
+ > .container .col, body.post-type-archive-llms_membership .neve-main > .container .col{ max-width: 100%; } body:not(.single):not(.archive):not(.blog):not(.search):not(.error404) .nv-sidebar-wrap, body.post-type-archive-course .nv-sidebar-wrap, body.post-type-archive-llms_membership .nv-sidebar-wrap{ max-width: 0%; } .neve-main > .archive-container .nv-index-posts.col{ max-width: 100%; } .neve-main > .archive-container .nv-sidebar-wrap{ max-width: 0%; } .neve-main > .single-post-container .nv-single-post-wrap.col{ max-width: 70%; } .single-post-container .alignfull > [class*="__inner-container"], .single-post-container .alignwide > [class*="__inner-container"]{ max-width:789px } .container-fluid.single-post-container .alignfull > [class*="__inner-container"], .container-fluid.single-post-container .alignwide > [class*="__inner-container"]{ max-width:calc(70% + 15px) } .neve-main > .single-post-container .nv-sidebar-wrap{ max-width: 30%; } .nv-meta-list{ --avatarsize: 20px; } .single .nv-meta-list{ --avatarsize: 20px; } .nv-post-cover{ --height: 400px;--padding:60px 40px;--justify: flex-start; --textalign: left; --valign: center; } .nv-post-cover .nv-title-meta-wrap, .nv-page-title-wrap, .entry-header{ --textalign: left; } .nv-is-boxed.nv-title-meta-wrap{ --padding:60px 40px; } .nv-is-boxed.nv-comments-wrap{ --padding:40px; } .nv-is-boxed.comment-respond{ --padding:40px; } .single:not(.single-product), .page{ --c-vspace:0 0 0 0;; } .scroll-to-top{ --padding:10px;--size:22px; } .header-menu-sidebar-bg{ --justify: flex-start; --textalign: left;--flexg: 1;--wrapdropdownwidth: auto; } .header-menu-sidebar{ width: 360px; } .builder-item--logo{ --maxwidth: 120px; --fs: 24px;--padding:10px 0;--margin:0; --textalign: left;--justify: flex-start; } .builder-item--nav-icon{ --label-margin:0 5px 0 0;;--padding:10px 15px;--margin:0; } .builder-item--primary-menu{ --spacing: 20px; --height: 25px;--padding:0;--margin:0; --fontsize: 1em; --lineheight: 1.6; --letterspacing: 0px; --iconsize: 1em; } }.nv-content-wrap .elementor a:not(.button):not(.wp-block-file__button){ text-decoration: none; }.scroll-to-top {right: 20px; border: none; position: fixed; bottom: 30px; display: none; opacity: 0; visibility: hidden; transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out; align-items: center; justify-content: center; z-index: 999; } @supports (-webkit-overflow-scrolling: touch) { .scroll-to-top { bottom: 74px; } } .scroll-to-top.image { background-position: center; } .scroll-to-top .scroll-to-top-image { width: 100%; height: 100%; } .scroll-to-top .scroll-to-top-label { margin: 0; padding: 5px; } .scroll-to-top:hover { text-decoration: none; } .scroll-to-top.scroll-to-top-left {left: 20px; right: unset;} .scroll-to-top.scroll-show-mobile { display: flex; } @media (min-width: 960px) { .scroll-to-top { display: flex; } }.scroll-to-top { color: var(--color); padding: var(--padding); border-radius: var(--borderradius); background: var(--bgcolor); } .scroll-to-top:hover, .scroll-to-top:focus { color: var(--hovercolor); background: var(--hoverbgcolor); } .scroll-to-top-icon, .scroll-to-top.image .scroll-to-top-image { width: var(--size); height: var(--size); } .scroll-to-top-image { background-image: var(--bgimage); background-size: cover; }:root{--nv-primary-accent:#2f5aae;--nv-secondary-accent:#2f5aae;--nv-site-bg:#ffffff;--nv-light-bg:#f4f5f7;--nv-dark-bg:#121212;--nv-text-color:#272626;--nv-text-dark-bg:#ffffff;--nv-c-1:#9463ae;--nv-c-2:#be574b;--nv-fallback-ff:Arial, Helvetica, sans-serif;}
+:root{--e-global-color-nvprimaryaccent:#2f5aae;--e-global-color-nvsecondaryaccent:#2f5aae;--e-global-color-nvsitebg:#ffffff;--e-global-color-nvlightbg:#f4f5f7;--e-global-color-nvdarkbg:#121212;--e-global-color-nvtextcolor:#272626;--e-global-color-nvtextdarkbg:#ffffff;--e-global-color-nvc1:#9463ae;--e-global-color-nvc2:#be574b;}
+/*# sourceURL=neve-style-inline-css */
+</style>
+<link rel='stylesheet' id='hfe-elementor-icons-css' href='https://wh.idcardqr.com/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.34.0' media='all' />
+<link rel='stylesheet' id='hfe-icons-list-css' href='https://wh.idcardqr.com/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css?ver=3.24.3' media='all' />
+<link rel='stylesheet' id='hfe-social-icons-css' href='https://wh.idcardqr.com/wp-content/plugins/elementor/assets/css/widget-social-icons.min.css?ver=3.24.0' media='all' />
+<link rel='stylesheet' id='hfe-social-share-icons-brands-css' href='https://wh.idcardqr.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/brands.css?ver=5.15.3' media='all' />
+<link rel='stylesheet' id='hfe-social-share-icons-fontawesome-css' href='https://wh.idcardqr.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.css?ver=5.15.3' media='all' />
+<link rel='stylesheet' id='hfe-nav-menu-icons-css' href='https://wh.idcardqr.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.css?ver=5.15.3' media='all' />
+<link rel='stylesheet' id='elementor-gf-roboto-css' href='https://fonts.googleapis.com/css?family=Roboto:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&#038;display=swap' media='all' />
+<link rel='stylesheet' id='elementor-gf-robotoslab-css' href='https://fonts.googleapis.com/css?family=Roboto+Slab:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&#038;display=swap' media='all' />
+<script src="https://wh.idcardqr.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script src="https://wh.idcardqr.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<script id="jquery-js-after">
+!function($){"use strict";$(document).ready(function(){$(this).scrollTop()>100&&$(".hfe-scroll-to-top-wrap").removeClass("hfe-scroll-to-top-hide"),$(window).scroll(function(){$(this).scrollTop()<100?$(".hfe-scroll-to-top-wrap").fadeOut(300):$(".hfe-scroll-to-top-wrap").fadeIn(300)}),$(".hfe-scroll-to-top-wrap").on("click",function(){$("html, body").animate({scrollTop:0},300);return!1})})}(jQuery);
+!function($){'use strict';$(document).ready(function(){var bar=$('.hfe-reading-progress-bar');if(!bar.length)return;$(window).on('scroll',function(){var s=$(window).scrollTop(),d=$(document).height()-$(window).height(),p=d? s/d*100:0;bar.css('width',p+'%')});});}(jQuery);
+//# sourceURL=jquery-js-after
+</script>
+<script id="xoo-aff-js-js-extra">
+var xoo_aff_localize = {"adminurl":"https://wh.idcardqr.com/wp-admin/admin-ajax.php","password_strength":{"min_password_strength":3,"i18n_password_error":"Por favor, introduce una contrase\u00f1a m\u00e1s fuerte.","i18n_password_hint":"Sugerencia: La contrase\u00f1a debe ser de al menos doce caracteres. Para hacerla m\u00e1s fuerte usa may\u00fasculas y min\u00fasculas, n\u00fameros y s\u00edmbolos como ! &quot; ? $ % ^ y )."}};
+//# sourceURL=xoo-aff-js-js-extra
+</script>
+<script src="https://wh.idcardqr.com/wp-content/plugins/easy-login-woocommerce/xoo-form-fields-fw/assets/js/xoo-aff-js.js?ver=2.1.0" id="xoo-aff-js-js" defer data-wp-strategy="defer"></script>
+<link rel="https://api.w.org/" href="https://wh.idcardqr.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://wh.idcardqr.com/wp-json/wp/v2/pages/10" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://wh.idcardqr.com/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.9.1" />
+<link rel="canonical" href="https://wh.idcardqr.com/" />
+<link rel='shortlink' href='https://wh.idcardqr.com/' />
+<style>.wh-floating-whatsapp { display: none !important; }</style>    <style>
+        /* ==========================================
+           TABS DE MEDIA LIBRARY (Subir/Biblioteca)
+           ========================================== */
+        
+        /* Contenedor de tabs */
+        .media-frame-router {
+            background: #f8fafc;
+            border-bottom: 2px solid #e2e8f0;
+            padding: 0;
+            min-height: auto !important;
+        }
+        
+        .media-router {
+            display: flex;
+            gap: 0;
+            align-items: flex-end;
+        }
+        
+        /* Estilo base de tabs - MÁS COMPACTO */
+        .media-menu-item {
+            background: #f1f5f9 !important;
+            color: #475569 !important;
+            border: none !important;
+            border-bottom: 2px solid transparent !important;
+            padding: 10px 20px !important;
+            font-weight: 600 !important;
+            font-size: 14px !important;
+            transition: all 0.2s ease !important;
+            margin: 0 !important;
+            cursor: pointer !important;
+            position: relative;
+            top: 2px;
+            line-height: 1.2 !important;
+            height: auto !important;
+            min-height: auto !important;
+        }
+        
+        /* Tab hover */
+        .media-menu-item:hover {
+            background: #e2e8f0 !important;
+            color: #334155 !important;
+        }
+        
+        /* Tab activo */
+        .media-menu-item.active {
+            background: white !important;
+            color: #667eea !important;
+            border-bottom-color: #667eea !important;
+            font-weight: 700 !important;
+        }
+        
+        /* ==========================================
+           BARRA DE BÚSQUEDA - MÁS COMPACTA
+           ========================================== */
+        
+        /* Toolbar */
+        .media-frame-content .media-toolbar {
+            min-height: auto !important;
+            padding: 8px 12px !important;
+        }
+        
+        .media-toolbar-secondary,
+        .media-toolbar-primary {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Ocultar textos innecesarios para ahorrar espacio */
+        .media-attachments-filter-heading {
+            display: none !important;
+        }
+        
+        /* Input de búsqueda - COMPACTO CON PLACEHOLDER VISIBLE */
+        #media-search-input {
+            border: 1px solid #cbd5e0 !important;
+            border-radius: 6px !important;
+            padding: 6px 12px !important;
+            font-size: 13px !important;
+            transition: all 0.3s ease !important;
+            height: 32px !important;
+            line-height: 1.2 !important;
+            color: #1e293b !important;
+        }
+        
+        /* PLACEHOLDER VISIBLE */
+        #media-search-input::placeholder {
+            color: #64748b !important;
+            opacity: 1 !important;
+            font-weight: 500 !important;
+        }
+        
+        #media-search-input:focus {
+            border-color: #667eea !important;
+            box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1) !important;
+            outline: none !important;
+        }
+        
+        /* Filtros de fecha - COMPACTO */
+        #media-attachment-date-filters {
+            border: 1px solid #cbd5e0 !important;
+            border-radius: 6px !important;
+            padding: 6px 10px !important;
+            font-size: 13px !important;
+            font-weight: 500 !important;
+            color: #475569 !important;
+            background: white !important;
+            transition: all 0.3s ease !important;
+            height: 32px !important;
+            line-height: 1.2 !important;
+        }
+        
+        #media-attachment-date-filters:focus {
+            border-color: #667eea !important;
+            box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1) !important;
+            outline: none !important;
+        }
+        
+        /* Label de búsqueda */
+        .media-search-input-label {
+            font-size: 13px !important;
+            margin-right: 8px !important;
+        }
+        
+        /* ==========================================
+           BOTÓN "USAR ESTA IMAGEN" - COMPACTO
+           ========================================== */
+        
+        /* Toolbar inferior */
+        .media-frame-toolbar {
+            background: white;
+            border-top: 2px solid #e2e8f0;
+            padding: 12px 16px !important;
+            min-height: auto !important;
+        }
+        
+        .media-frame-toolbar .media-toolbar {
+            padding: 0 !important;
+        }
+        
+        /* Botón primario - TAMAÑO REDUCIDO */
+        .media-button-select {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+            color: white !important;
+            border: none !important;
+            padding: 10px 24px !important;
+            border-radius: 6px !important;
+            font-weight: 700 !important;
+            font-size: 14px !important;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1) !important;
+            box-shadow: 0 3px 12px rgba(102, 126, 234, 0.35) !important;
+            transition: all 0.3s ease !important;
+            cursor: pointer !important;
+            letter-spacing: 0.3px !important;
+            height: auto !important;
+            line-height: 1.3 !important;
+        }
+        
+        /* Botón hover */
+        .media-button-select:hover {
+            background: linear-gradient(135deg, #5568d3 0%, #653a8a 100%) !important;
+            transform: translateY(-1px) !important;
+            box-shadow: 0 4px 16px rgba(102, 126, 234, 0.45) !important;
+        }
+        
+        /* Botón activo (clic) */
+        .media-button-select:active {
+            transform: translateY(0px) !important;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.35) !important;
+        }
+        
+        /* Botón deshabilitado - TEXTO MÁS OSCURO Y VISIBLE */
+        .media-button-select:disabled,
+        .media-button-select[disabled] {
+            background: #e2e8f0 !important;
+            color: #475569 !important; /* Gris oscuro visible */
+            cursor: not-allowed !important;
+            box-shadow: none !important;
+            transform: none !important;
+            opacity: 1 !important; /* Sin transparencia */
+            font-weight: 600 !important;
+        }
+        
+        /* ==========================================
+           MEJORAS ADICIONALES
+           ========================================== */
+        
+        /* Título del modal */
+        .media-frame-title h1 {
+            color: #1e293b !important;
+            font-weight: 700 !important;
+            font-size: 20px !important;
+            padding: 14px 20px !important;
+            margin: 0 !important;
+        }
+        
+        .media-frame-title {
+            padding: 0 !important;
+        }
+        
+        /* Sidebar */
+        .media-sidebar {
+            background: #fafbfc !important;
+            border-left: 2px solid #e2e8f0 !important;
+        }
+        
+        /* Headers de sidebar */
+        .attachment-details h2 {
+            color: #1e293b !important;
+            font-weight: 700 !important;
+            border-bottom: 2px solid #e2e8f0 !important;
+            padding-bottom: 10px !important;
+            font-size: 16px !important;
+        }
+        
+        /* Labels - COMPACTOS */
+        .setting .name,
+        .compat-field-compression_level th label {
+            color: #475569 !important;
+            font-weight: 600 !important;
+            font-size: 12px !important;
+        }
+        
+        /* Inputs del sidebar - COMPACTOS */
+        .attachment-details input[type="text"],
+        .attachment-details textarea {
+            border: 1px solid #cbd5e0 !important;
+            border-radius: 5px !important;
+            padding: 8px 10px !important;
+            font-size: 13px !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .attachment-details input[type="text"]:focus,
+        .attachment-details textarea:focus {
+            border-color: #667eea !important;
+            box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1) !important;
+            outline: none !important;
+        }
+        
+        /* Botón "Copiar URL" - COMPACTO */
+        .copy-attachment-url {
+            background: #667eea !important;
+            color: white !important;
+            border: none !important;
+            padding: 6px 14px !important;
+            border-radius: 5px !important;
+            font-weight: 600 !important;
+            font-size: 12px !important;
+            transition: all 0.3s ease !important;
+            height: auto !important;
+        }
+        
+        .copy-attachment-url:hover {
+            background: #5568d3 !important;
+            transform: translateY(-1px) !important;
+        }
+        
+        /* Botón "Editar imagen" */
+        .edit-attachment {
+            color: #667eea !important;
+            font-weight: 600 !important;
+            text-decoration: none !important;
+            transition: all 0.2s ease !important;
+            font-size: 13px !important;
+        }
+        
+        .edit-attachment:hover {
+            color: #5568d3 !important;
+            text-decoration: underline !important;
+        }
+        
+        /* Botón "Borrar permanentemente" */
+        .delete-attachment {
+            color: #dc2626 !important;
+            font-weight: 600 !important;
+            transition: all 0.2s ease !important;
+            font-size: 13px !important;
+        }
+        
+        .delete-attachment:hover {
+            color: #b91c1c !important;
+            text-decoration: underline !important;
+        }
+        
+        /* Checkboxes de selección */
+        .attachment .check {
+            background: rgba(102, 126, 234, 0.9) !important;
+            border: 2px solid white !important;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2) !important;
+        }
+        
+        .attachment.selected .check {
+            background: #667eea !important;
+        }
+        
+        /* Spinner */
+        .media-toolbar .spinner {
+            margin: 0 8px !important;
+        }
+        
+        /* ==========================================
+           AJUSTES DE ESPACIADO GENERAL
+           ========================================== */
+        
+        .media-frame-content {
+            top: 50px !important; /* Menos espacio para tabs */
+        }
+        
+        .media-toolbar-secondary {
+            flex-wrap: nowrap;
+            white-space: nowrap;
+        }
+
+        
+        
+        /* ==========================================
+           RESPONSIVE
+           ========================================== */
+        
+        @media (max-width: 768px) {
+            .media-menu-item {
+                padding: 8px 16px !important;
+                font-size: 13px !important;
+            }
+            
+            .media-button-select {
+                padding: 8px 20px !important;
+                font-size: 13px !important;
+            }
+            
+            #media-search-input,
+            #media-attachment-date-filters {
+                font-size: 12px !important;
+                padding: 5px 10px !important;
+                height: 30px !important;
+            }
+        }
+        
+        /* ==========================================
+           ANIMACIONES SUAVES
+           ========================================== */
+        
+        @keyframes whSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-5px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .media-frame {
+            animation: whSlideIn 0.25s ease;
+        }
+    </style>
+    <!-- Analytics by WP Statistics - https://wp-statistics.com -->
+<meta name="generator" content="Elementor 3.35.0; features: e_font_icon_svg, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-swap">
+			<style>
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {
+					background-image: none !important;
+				}
+				@media screen and (max-height: 1024px) {
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+				@media screen and (max-height: 640px) {
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+</style>
+<!--esta es la imagen inicial del logo  en el navegador -->
+			<link rel="icon" href="encabezado (1).png" sizes="32x32" />
+<link rel="icon" href="encabezado (1).png" sizes="192x192" />
+<link rel="apple-touch-icon" href="encabezado (1).png" />
+<meta name="msapplication-TileImage" content="encabezado (1).png" />
+
+	</head>
+<!-- aqui empieza el logo que abre con casa de whatsapp house-->
+<body  class="home wp-singular page-template page-template-elementor_header_footer page page-id-10 wp-theme-neve ehf-header ehf-footer ehf-template-neve ehf-stylesheet-neve  nv-blog-grid nv-sidebar-full-width menu_sidebar_slide_left elementor-default elementor-template-full-width elementor-kit-6 elementor-page elementor-page-10" id="neve_body"  >
+<!-- Preloader WatsHouse -->
+<div id="watshouse-preloader">
+    <div class="watshouse-preloader-content">
+        <div class="watshouse-icon-container">
+            <svg class="watshouse-house-icon" viewBox="-10 -10 120 120">
+                <!-- Casa glow difuminado (fondo) -->
+                <path class="watshouse-house-glow-blur" d="M10,50 L50,15 L90,50 L90,85 L10,85 Z M35,85 L35,60 L65,60 L65,85"/>
+                <!-- Casa glow (destello) -->
+                <path class="watshouse-house-glow" d="M10,50 L50,15 L90,50 L90,85 L10,85 Z M35,85 L35,60 L65,60 L65,85"/>
+                <!-- Casa outline base (nítido al frente) -->
+                <path class="watshouse-house-outline" d="M10,50 L50,15 L90,50 L90,85 L10,85 Z M35,85 L35,60 L65,60 L65,85"/>
+            </svg>
+        </div>
+        <h1 class="watshouse-title">WhatsHouse</h1>
+        <p class="watshouse-description">
+            Tarjeta digital + catálogo de propiedades
+            <span class="watshouse-loading-dots">
+                <span>.</span><span>.</span><span>.</span>
+            </span>
+        </p>
+    </div>
+</div>
+<div class="wrapper">
+	
+<header class="header">
+	<a class="neve-skip-link show-on-focus" href="#content">
+		Saltar al contenido
+	</a>
+
+	<header id="masthead" itemscope="itemscope" itemtype="https://schema.org/WPHeader">
+		<p class="main-title bhf-hidden" itemprop="headline">
+			<a href="https://wh.idcardqr.com" title="Dynah Gómez Bienes Raíces" rel="home">
+				Dynah Gómez Bienes Raíces
+			</a>
+		</p>
+
+		<div data-elementor-type="wp-post" data-elementor-id="23" class="elementor elementor-23">
+			<!-- dce invisible element 3ec447f -->
+		</div>
+	</header>
+
+</header>
+	
+
+	
+	<main id="content" class="neve-main">
+        
+
+		<div data-elementor-type="wp-page" data-elementor-id="10" class="elementor elementor-10">
+						<section class="elementor-section elementor-top-section elementor-element elementor-element-2c4af6a elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="2c4af6a" data-element_type="section" data-e-type="section">
+						<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7f017b9" data-id="7f017b9" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-e878e8e elementor-widget elementor-widget-shortcode" data-id="e878e8e" data-element_type="widget" data-e-type="widget" data-widget_type="shortcode.default">
+							<div class="elementor-shortcode">    <div id="whatshouse-app" class="whatshouse-container">
+        <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;500;600&display=swap');
+    .whatshouse-container * { margin:0; padding:0; box-sizing:border-box; }
+    .whatshouse-container { font-family:'Open Sans', sans-serif; background:#dee4ed; color:#001e3a; }
+    body.wh-modal-open { overflow: hidden; height: 100vh; }
+    .wh-header-banner, .wh-header-spacer { background:linear-gradient(135deg, #1f4788 0%, #4a75ba 100%); padding:50px 20px 45px; text-align:center; color:white; box-shadow:0 4px 15px rgba(0,0,0,0.1); }
+    @media (min-width:768px) { .wh-header-banner, .wh-header-spacer { padding:55px 20px 40px; } }
+    @media (min-width:1024px) { .wh-header-banner, .wh-header-spacer { padding:60px 20px 40px; } .wh-header-banner h1 { font-size:36px; } }
+    .wh-header-banner h1 { font-family:'Roboto', sans-serif; font-size:28px; margin-bottom:8px; font-weight:600; }
+    .wh-asesor-card { background:white; margin:-30px 20px 20px; border-radius:16px; padding:25px; box-shadow:0 8px 30px rgba(0,0,0,0.12); text-align:center; position:relative; }
+    @media (min-width:1024px) { .wh-asesor-card { max-width:600px; margin:-40px auto 30px; } }
+    .wh-avatar-container { position:relative; width:100%; margin-bottom:15px; }
+    .wh-avatar-bg { position:absolute; top:-50px; left:0; right:0; height:150px; background-size:cover; background-position:center; border-radius:16px 16px 0 0; margin:-25px -25px 0; z-index:0; }
+    .wh-avatar-gradient-overlay { position:absolute; top:0; left:0; right:0; bottom:0; border-radius:16px 16px 0 0; }
+    .wh-avatar { width:90px; height:90px; border-radius:50%; background:linear-gradient(135deg, #1f4788 0%, #4a75ba 100%); margin:0 auto; display:flex; align-items:center; justify-content:center; font-size:36px; color:white; border:4px solid white; box-shadow:0 4px 15px rgba(0,0,0,0.1); position:relative; z-index:2; overflow:hidden; cursor:pointer; transition:transform 0.3s; }
+    .wh-avatar:hover { transform:scale(1.05); }
+    .wh-avatar img { width:100%; height:100%; object-fit:cover; }
+    .wh-asesor-card h2 { font-family:'Roboto', sans-serif; font-size:22px; margin-bottom:5px; color:#001e3a; }
+    .wh-role { color:#718096; font-size:14px; margin-bottom:20px; }
+    .wh-contact-icons { display:flex; justify-content:center; gap:12px; margin-bottom:20px; flex-wrap:wrap; }
+    .wh-contact-icons a { width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; transition:transform 0.3s, box-shadow 0.3s; font-size:20px; }
+    .wh-contact-icons a:hover { transform:translateY(-3px); box-shadow:0 6px 20px rgba(0,0,0,0.15); }
+    .wh-icon-phone { background:#a91917; color:#ffffff; }
+    .wh-icon-phone:hover { background:#7cbce8; }
+    .wh-icon-whatsapp { background:#25d366; color:white; }
+    .wh-icon-email { background:#a91917; color:#ffffff; }
+    .wh-icon-email:hover { background:#7cbce8; }
+    .wh-icon-web { background:#a91917; color:#ffffff; }
+    .wh-icon-web:hover { background:#7cbce8; }
+    .wh-icon-vcf { background:#a91917; color:#ffffff; }
+    .wh-icon-vcf:hover { background:#7cbce8; }
+    .wh-icon-qr { background:#a91917; color:#ffffff; }
+    .wh-icon-qr:hover { background:#7cbce8; }
+    .wh-social-icons { display:flex; justify-content:center; gap:12px; padding-top:15px; border-top:1px solid #e2e8f0; }
+    .wh-social-icons a { width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:#f7fafc; color:#4a5568; text-decoration:none; transition:all 0.3s; font-size:18px; }
+    .wh-social-icons a:hover { background:#1f4788; color:white; transform:scale(1.1); }
+    .wh-categories-section { padding:20px; overflow:hidden; }
+    @media (min-width:1024px) { .wh-categories-section { max-width:1400px; margin:0 auto; } }
+    .wh-categories-slider { display:flex; gap:12px; overflow-x:auto; scroll-behavior:smooth; padding-bottom:10px; -webkit-overflow-scrolling:touch; }
+    .wh-categories-slider::-webkit-scrollbar { height:6px; }
+    .wh-categories-slider::-webkit-scrollbar-thumb { background:#cbd5e0; border-radius:3px; }
+    .wh-category-item { min-width:auto; padding:12px 20px; background:white; border-radius:25px; text-align:center; cursor:pointer; transition:all 0.3s; box-shadow:0 2px 8px rgba(0,0,0,0.08); border:2px solid transparent; white-space:nowrap; flex-shrink:0; display:flex; align-items:center; gap:6px; font-size:14px; font-weight:500; color:#001e3a; }
+    .wh-category-item i { font-size:16px; }
+    .wh-category-item:hover, .wh-category-item.wh-active { background:#1f4788; color:white; transform:translateY(-2px); box-shadow:0 4px 12px rgba(102,126,234,0.3); }
+    .wh-properties-container { padding:0 20px 100px; display:grid; gap:20px; }
+    @media (max-width:767px) { .wh-properties-container { grid-template-columns:repeat(1, 1fr); } }
+    @media (min-width:768px) and (max-width:1023px) { .wh-properties-container { grid-template-columns:repeat(2, 1fr); } }
+    @media (min-width:1024px) { .wh-properties-container { grid-template-columns:repeat(4, 1fr); max-width:1400px; margin:0 auto; } }
+    .wh-property-card { background:white; border-radius:16px; overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,0.08); transition:transform 0.3s, box-shadow 0.3s; display:flex; flex-direction:column; }
+    .wh-property-card:hover { transform:translateY(-4px); box-shadow:0 8px 25px rgba(0,0,0,0.12); }
+    .wh-property-image { width:100%; height:220px; background:linear-gradient(135deg, #1f4788 0%, #4a75ba 100%); position:relative; overflow:hidden; cursor:pointer; }
+    .wh-property-image img { width:100%; height:100%; object-fit:cover; }
+    .wh-property-icons { position:absolute; top:12px; right:12px; display:flex; gap:8px; flex-direction:column; z-index:10; }
+    .wh-property-icon-btn { width:40px; height:40px; border-radius:50%; background:rgba(255,255,255,0.98); border:2px solid rgba(0,0,0,0.08); cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all 0.3s; box-shadow:0 3px 12px rgba(0,0,0,0.25); font-size:17px; }
+    .wh-property-icon-btn:hover { background:white; transform:scale(1.15); box-shadow:0 5px 18px rgba(0,0,0,0.35); }
+    .wh-icon-video { color:#ef4444; }
+    .wh-icon-map { color:#10b981; }
+    .wh-icon-gallery { color:#8b5cf6; }
+    .wh-icon-pdf { color:#dc2626; }
+    .wh-property-content { padding:20px; flex:1; display:flex; flex-direction:column; }
+    .wh-property-title { font-family:'Roboto', sans-serif; font-size:18px; font-weight:600; color:#001e3a; margin-bottom:8px; }
+    .wh-property-price { font-size:24px; font-weight:700; color:#6479b9; margin-bottom:12px; }
+    .wh-price-cotizar { background:linear-gradient(135deg, #1f4788 0%, #4a75ba 100%); color:white; padding:6px 16px; border-radius:20px; font-size:14px; font-weight:600; display:inline-block; }
+    .wh-property-description { color:#1c1c1c; font-size:14px; line-height:1.6; margin-bottom:15px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; flex:1; }
+    .wh-property-actions { display:flex; gap:10px; margin-top:auto; }
+    .wh-btn { flex:1; padding:12px; border:none; border-radius:10px; cursor:pointer; font-size:14px; font-weight:600; transition:all 0.3s; text-align:center; }
+    .wh-btn-info { background:#1a1d28; color:#ffffff; border:2px solid #ffffff; }
+    .wh-btn-info:hover { background:#2b2f40; }
+    .wh-btn-whatsapp { background:#075e54; color:white; display:flex; align-items:center; justify-content:center; gap:8px; }
+    .wh-btn-whatsapp:hover { background:#1da851; transform:translateY(-2px); box-shadow:0 4px 12px rgba(37,211,102,0.3); }
+    .wh-load-more-container { text-align:center; padding:20px; }
+    .wh-btn-load-more { background:#1a1d28; color:#ffffff; border:2px solid #ffffff; padding:14px 40px; border-radius:25px; cursor:pointer; font-size:16px; font-weight:600; transition:all 0.3s; }
+    .wh-btn-load-more:hover { background:#2b2f40; transform:translateY(-2px); box-shadow:0 4px 15px rgba(102,126,234,0.3); }
+    .wh-floating-whatsapp { position:fixed; bottom:20px; right:20px; width:60px; height:60px; background:#25d366; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 20px rgba(37,211,102,0.4); cursor:pointer; transition:all 0.3s; z-index:1000; animation:whPulse 2s infinite; text-decoration:none; }
+    .wh-floating-whatsapp:hover { transform:scale(1.1); box-shadow:0 6px 25px rgba(37,211,102,0.5); }
+    .wh-floating-whatsapp i { font-size:28px; color:white; }
+    @keyframes whPulse { 0%, 100% { box-shadow:0 4px 20px rgba(37,211,102,0.4); } 50% { box-shadow:0 4px 30px rgba(37,211,102,0.6); } }
+    .wh-modal { display:none; position:fixed; z-index:2000; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.75); animation:whFadeIn 0.3s; overflow-y:auto; -webkit-overflow-scrolling:touch; padding:20px 0; }
+    .wh-modal-content { background:white; margin:0 auto; padding:0; border-radius:16px; width:90%; max-width:600px; animation:whSlideUp 0.3s; position:relative; max-height:none; overflow:visible; }
+    @keyframes whFadeIn { from { opacity:0; } to { opacity:1; } }
+    @keyframes whSlideUp { from { transform:translateY(50px); opacity:0; } to { transform:translateY(0); opacity:1; } }
+    .wh-modal-header { padding:20px 25px; border-bottom:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center; background:white; border-radius:16px 16px 0 0; position:sticky; top:0; z-index:10; }
+    .wh-modal-header h3 { font-family:'Roboto', sans-serif; font-size:20px; color:#001e3a; margin:0; }
+    .wh-close-modal { background:none; border:none; font-size:28px; cursor:pointer; color:#718096; width:32px; height:32px; display:flex; align-items:center; justify-content:center; border-radius:50%; transition:all 0.3s; flex-shrink:0; }
+    .wh-close-modal:hover { background:#f7fafc; color:#001e3a; }
+    .wh-modal-body { padding:25px; overflow-y:auto; max-height:calc(85vh - 80px); }
+    .wh-modal-body::-webkit-scrollbar { width:6px; }
+    .wh-modal-body::-webkit-scrollbar-track { background:#f1f1f1; border-radius:10px; }
+    .wh-modal-body::-webkit-scrollbar-thumb { background:#cbd5e0; border-radius:10px; }
+    .wh-modal-body::-webkit-scrollbar-thumb:hover { background:#a0aec0; }
+    .wh-modal-image { width:100%; height:auto; max-height:400px; object-fit:contain; border-radius:12px; margin-bottom:25px; display:block; background:#f7fafc; }
+    .wh-info-row { padding:18px 0; border-bottom:1px solid #e8e8e8; }
+    .wh-info-row:last-child { border-bottom:none; padding-bottom:0; }
+    .wh-info-row:first-child { padding-top:0; }
+    .wh-info-label { font-weight:600; color:#4a5568; margin-bottom:8px; font-size:14px; text-transform:uppercase; letter-spacing:0.5px; }
+    .wh-info-value { color:#0a0a0a; line-height:1.7; font-size:15px; }
+    .wh-info-value ul { list-style:disc; margin-left:20px; margin-top:8px; }
+    .wh-info-value ul li { margin-bottom:5px; }
+    .wh-form-group { margin-bottom:18px; }
+    .wh-form-group label { display:block; margin-bottom:8px; color:#4a5568; font-weight:500; font-size:14px; }
+    .wh-form-group input { width:100%; padding:12px 15px; border:2px solid #e2e8f0; border-radius:10px; font-size:14px; transition:all 0.3s; font-family:inherit; }
+    .wh-form-group input:focus { outline:none; border-color:#1f4788; box-shadow:0 0 0 3px rgba(102,126,234,0.1); }
+    .wh-hidden { display:none; }
+    .wh-mobile-fb-action { background:#1877f2; color:white; padding:15px 25px; border-radius:12px; display:flex; align-items:center; justify-content:center; gap:10px; font-weight:600; text-decoration:none; transition:all 0.3s; margin-top:15px; }
+    .wh-mobile-fb-action:hover { background:#166fe5; transform:translateY(-2px); box-shadow:0 4px 12px rgba(24,119,242,0.3); }
+    @media (max-width:768px) { .wh-modal { padding:10px 0; } .wh-modal-content { width:95%; border-radius:12px; } .wh-modal-header { padding:15px 20px; border-radius:12px 12px 0 0; } .wh-modal-header h3 { font-size:18px; } .wh-modal-body { padding:20px; max-height:calc(90vh - 70px); } .wh-modal-image { max-height:250px; margin-bottom:20px; } }</style>
+        
+              <div class="wh-hero"></div>
+        
+<div class="wh-asesor-card">
+    <div class="wh-avatar-container">
+        <div class="wh-avatar-bg wh-avatar-bg-gradient" 
+             style="background-image: url('encabezado(1).png');"> <!-- 🔥 aqui camba la imagen arriva de la foto) -->
+
+            <div class="wh-avatar-gradient-overlay" style="
+                background: linear-gradient(to bottom, 
+                transparent 0%, 
+                transparent 40%,
+                #1f1f1f72 60%, 
+                #363a9be5 100%);
+            "></div>
+        </div>
+
+        <div class="wh-avatar" onclick="window.open('https://wa.me/523343340062?text=Hola%20Dynah%21%20Me%20interesa%20informaci%C3%B3n%20sobre%20tus%20propiedades.%20Mi%20nombre%20es%3A', '_blank')">
+            <img decoding="async" src="foto2.png" alt="Dynah Gómez">
+        </div>
+    </div>
+
+    <h2>Dynah Gomez</h2>
+
+    <div class="wh-role">
+        Asesor Inmobiliario CD Maderas
+       
+    </div>
+
+    <div class="wh-contact-icons">
+
+        <a href="tel:3343340062" class="wh-icon-phone" title="Llamar">
+            <i class="fas fa-phone"></i>
+        </a>
+
+        <a href="https://wa.me/523343340062?text=Hola%20Dynah%21%20Me%20interesa%20informaci%C3%B3n%20sobre%20tus%20propiedades.%20Mi%20nombre%20es%3A" 
+           target="_blank" class="wh-icon-whatsapp" title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+        <a href="mailto:dinahgomez19@gmail.com" class="wh-icon-email" title="Email">
+            <i class="fas fa-envelope"></i>
+        </a>
+
+        <a href="javascript:void(0)" onclick="whShowQR()" class="wh-icon-qr" title="Ver QR">
+            <i class="fas fa-qrcode"></i>
+        </a>
+
+    </div>
+
+    <!-- 🔥 AQUÍ VA EL CUBO (ANTES ERAN LAS REDES) -->
+    <div class="slider" id="slider"></div>
+</div>
+
+<div class="wh-categories-section">
+    <div class="wh-categories-slider">
+        <div class="wh-category-item wh-active" data-category="all">Todas</div>
+        <div class="wh-category-item" data-category="casas">Casas</div>
+        <div class="wh-category-item" data-category="terrenos">Terrenos</div>
+        <div class="wh-category-item" data-category="comercial">Comercial</div>
+        <div class="wh-category-item" data-category="promocionales">Promocionales</div>
+    </div>
+</div>
+
+        <div class="wh-properties-container" id="whPropertiesContainer"></div>
+        <div class="wh-load-more-container wh-hidden" id="whLoadMoreContainer">
+            <button class="wh-btn-load-more" onclick="whLoadMoreProperties()">Detalles</button>
+        </div>
+
+        
+                <div id="whQRModal" class="wh-modal">
+            <div class="wh-modal-content" style="max-width: 400px;">
+                <div class="wh-modal-header">
+                    <h3>Escanear Código QR</h3>
+                    <button class="wh-close-modal" onclick="whCloseModal('whQRModal')">&times;</button>
+                </div>
+                <div class="wh-modal-body" style="text-align: center;">
+                    <img decoding="async" src="qryo.jpg" alt="Código QR" style="width: 100%; max-width: 300px; border-radius: 12px;">
+                </div>
+            </div>
+        </div>
+        
+        <div id="whInfoModal" class="wh-modal">
+            <div class="wh-modal-content">
+                <div class="wh-modal-header">
+                    <h3>Información Completa</h3>
+                    <button class="wh-close-modal" onclick="whCloseModal('whInfoModal')">&times;</button>
+                </div>
+                <div class="wh-modal-body" id="whModalInfoContent"></div>
+            </div>
+        </div>
+
+        <div id="whContactModal" class="wh-modal">
+            <div class="wh-modal-content">
+                <div class="wh-modal-header">
+                    <h3>Contactar por WhatsApp</h3>
+                    <button class="wh-close-modal" onclick="whCloseModal('whContactModal')">&times;</button>
+                </div>
+                <div class="wh-modal-body">
+                    <form id="whContactForm">
+                        <input type="hidden" id="whatshouse_email_nonce" value="170ba9e542">
+                        <div class="wh-form-group">
+                            <label>Nombre *</label>
+                            <input type="text" id="whContactName" required placeholder="Tu nombre completo">
+                        </div>
+                        <div class="wh-form-group">
+                            <label>Correo *</label>
+                            <input type="email" id="whContactEmail" required placeholder="tu@email.com">
+                        </div>
+                        <div class="wh-form-group">
+                            <label>Teléfono *</label>
+                            <input type="tel" id="whContactPhone" required placeholder="+52 55 1234 5678">
+                        </div>
+                        <input type="hidden" id="whPropertyData">
+                        <button type="submit" class="wh-btn wh-btn-whatsapp" style="width: 100%; margin-top: 10px;">
+                            <i class="fab fa-whatsapp"></i> Me interesa
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+   <script>
+const images = [
+"cubo (1).png",
+"cubo (2).png",
+"cubo (3).png",
+"cubo (4).png",
+"cubo (5).png",
+"cubo (6).png",
+"cubo (7).png",
+"cubo (8).png",
+"cubo (9).png",
+"cubo (10).png"
+];
+
+let current = 0;
+const slider = document.getElementById("slider");
+
+// crear slide base
+function createSlide(src) {
+  const div = document.createElement("div");
+  div.className = "slide";
+  div.innerHTML = `<img src="${src}">`;
+  return div;
+}
+
+// crear slices
+function createSlices(src) {
+  const slices = [];
+
+  for (let i = 0; i < 3; i++) {
+    const s = document.createElement("div");
+    s.className = "slice";
+
+    s.style.left = (i * 33.33) + "%";
+    s.style.backgroundImage = `url(${src})`;
+    s.style.backgroundPosition = `${-i * 100}% 0`;
+
+    slider.appendChild(s);
+    slices.push(s);
+  }
+
+  return slices;
+}
+
+// transición
+function nextSlide() {
+
+  const next = (current + 1) % images.length;
+  const type = Math.floor(Math.random() * 3);
+
+  const currentSlide = slider.querySelector(".slide");
+
+  // 👉 1. IZQ-DER
+  if (type === 0) {
+    const newSlide = createSlide(images[next]);
+    newSlide.style.transform = "rotateY(-90deg)";
+    slider.appendChild(newSlide);
+
+    setTimeout(() => {
+      newSlide.style.transition = "1s";
+      newSlide.style.transform = "rotateY(0deg)";
+      currentSlide.style.transform = "rotateY(90deg)";
+    }, 50);
+
+    setTimeout(() => {
+      currentSlide.remove();
+    }, 1000);
+  }
+
+  // 👉 2. ARRIBA-ABAJO
+  else if (type === 1) {
+    const newSlide = createSlide(images[next]);
+    newSlide.style.transform = "rotateX(90deg)";
+    slider.appendChild(newSlide);
+
+    setTimeout(() => {
+      newSlide.style.transition = "1s";
+      newSlide.style.transform = "rotateX(0deg)";
+      currentSlide.style.transform = "rotateX(-90deg)";
+    }, 50);
+
+    setTimeout(() => {
+      currentSlide.remove();
+    }, 1000);
+  }
+
+  // 👉 3. SLICES 🔥
+  else {
+    const slices = createSlices(images[next]);
+
+    slices.forEach((s, i) => {
+      s.style.transform = "rotateX(90deg)";
+
+      setTimeout(() => {
+        s.style.transform = "rotateX(0deg)";
+      }, i * 200);
+    });
+
+    setTimeout(() => {
+      currentSlide.querySelector("img").src = images[next];
+      slices.forEach(s => s.remove());
+    }, 1000);
+  }
+
+  current = next;
+}
+
+// iniciar
+slider.appendChild(createSlide(images[0]));
+setInterval(nextSlide, 3000);
+
+</script>
+<style>
+.wh-property-image {
+    width: 100%;
+    height: auto; /* 🔥 QUITA LA ALTURA FIJA */
+}
+
+.wh-property-image img {
+    width: 100%;
+    height: auto; /* 🔥 QUE CREZCA SOLA */
+    display: block;
+}
+/* 🔥 este es para el header interno de la tarjeta donde esta la foto */
+.wh-avatar-bg { 
+    position:absolute; 
+    top:-80px; 
+    left:0; 
+    right:0; 
+    height: 280px;; /* 🔥 tamaño grande en compu del header donde esta la foto,aqui podemos ajustar */
+    background-size:cover; 
+    background-position:center; 
+    border-radius:16px 16px 0 0; 
+    margin:-25px -25px 0; 
+    z-index:0; 
+}
+</style>
+   <script>
+(function(){
+
+let whAllProperties = [];
+let whCurrentCategory = "all";
+let whDisplayedCount = 36;
+
+
+document.addEventListener("DOMContentLoaded", function(){
+
+fetch("propiedades.json")
+.then(response => response.json())
+.then(data => {
+
+    whAllProperties = data;
+
+    whSetupCategoryListeners();
+    whLoadProperties();
+
+})
+.catch(error => console.error("Error cargando propiedades:", error));
+
+});
+        function whIsMobile() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            whLoadProperties();
+            whSetupCategoryListeners();
+        });
+
+        function whSetupCategoryListeners() {
+            const categories = document.querySelectorAll('.wh-category-item');
+            categories.forEach(cat => {
+                cat.addEventListener('click', function() {
+                    categories.forEach(c => c.classList.remove('wh-active'));
+                    this.classList.add('wh-active');
+                    whCurrentCategory = this.dataset.category;
+                    whDisplayedCount = 36;
+                    whLoadProperties();
+                });
+            });
+        }
+
+        function whGetFilteredProperties() {
+            if (whCurrentCategory === 'all') return whAllProperties;
+            return whAllProperties.filter(p => p.categoria === whCurrentCategory);
+        }
+
+        window.whLoadProperties = function() {
+            const container = document.getElementById('whPropertiesContainer');
+            const filtered = whGetFilteredProperties();
+            const toShow = filtered.slice(0, whDisplayedCount);
+            
+            container.innerHTML = toShow.map(p => whCreatePropertyCard(p)).join('');
+            
+            const loadMoreBtn = document.getElementById('whLoadMoreContainer');
+            if (whDisplayedCount < filtered.length) {
+                loadMoreBtn.classList.remove('wh-hidden');
+            } else {
+                loadMoreBtn.classList.add('wh-hidden');
+            }
+        }
+
+        window.whLoadMoreProperties = function() {
+            whDisplayedCount += 6;
+            whLoadProperties();
+        }
+
+        function whCreatePropertyCard(property) {
+            const priceHTML = property.precio_tipo === 'cotizar' 
+                ? '<span class="wh-price-cotizar">💬 Cotizar</span>'
+                : '<div class="wh-property-price">' + property.precio + '</div>';
+
+            let iconsHTML = '<div class="wh-property-icons">';
+            
+            if (property.video_url && property.video_url.trim() !== '') {
+                const videoTipo = property.video_tipo || 'iframe';
+                if (videoTipo === 'iframe') {
+                    iconsHTML += '<button class="wh-property-icon-btn" onclick="event.stopPropagation(); whOpenVideoModal(\'' + property.video_url + '\')" title="Ver video"><i class="fas fa-play wh-icon-video"></i></button>';
+                } else {
+                    iconsHTML += '<button class="wh-property-icon-btn" onclick="event.stopPropagation(); window.open(\'' + property.video_url + '\', \'_blank\')" title="Ver video"><i class="fas fa-play wh-icon-video"></i></button>';
+                }
+            }
+            
+            if (property.map_url && property.map_url.trim() !== '') {
+                const mapTipo = property.map_tipo || 'link';
+                if (mapTipo === 'iframe') {
+                    iconsHTML += '<button class="wh-property-icon-btn" onclick="event.stopPropagation(); whOpenMapModal(\'' + property.map_url + '\')" title="Ver mapa"><i class="fas fa-map-marker-alt wh-icon-map"></i></button>';
+                } else {
+                    iconsHTML += '<button class="wh-property-icon-btn" onclick="event.stopPropagation(); window.open(\'' + property.map_url + '\', \'_blank\')" title="Ver mapa"><i class="fas fa-map-marker-alt wh-icon-map"></i></button>';
+                }
+            }
+            
+            const tieneGaleria = (property.galeria_url && property.galeria_url.trim() !== '') || 
+                                (property.galeria_facebook && property.galeria_facebook.trim() !== '');
+            
+            if (tieneGaleria) {
+                iconsHTML += '<button class="wh-property-icon-btn" onclick="event.stopPropagation(); whOpenGalleryById(' + property.id + ')" title="Ver galería"><i class="fas fa-images wh-icon-gallery"></i></button>';
+            }
+            
+           if (
+  (Array.isArray(property.pdf_url) && property.pdf_url.length > 0) ||
+  (property.pdf_url && typeof property.pdf_url === "string" && property.pdf_url.trim() !== '') ||
+  (property.pdf_file && property.pdf_file.trim() !== '')
+) {
+
+  if (Array.isArray(property.pdf_url)) {
+
+    const muchos = property.pdf_url.length > 5;
+    const mitad = Math.ceil(property.pdf_url.length / 2);
+
+    let rightIndex = 0;
+    let leftIndex = 0;
+
+    property.pdf_url.forEach((pdf, index) => {
+
+      let lado = 'right';
+      let top = 0;
+
+      if (muchos) {
+        if (index < mitad) {
+          lado = 'right';
+          top = rightIndex * 60;
+          rightIndex++;
+        } else {
+          lado = 'left';
+          top = leftIndex * 60;
+          leftIndex++;
+        }
+      } else {
+        top = index * 60;
+      }
+
+      iconsHTML += '<button class="wh-property-icon-btn pdf-btn ' + lado + '" ' +
+        'style="top:' + (10 + top) + 'px;" ' +
+        'onclick="event.stopPropagation(); window.open(\'' + pdf + '\', \'_blank\')" ' +
+        'title="Descargar PDF">' +
+        '<i class="fas fa-file-pdf wh-icon-pdf"></i>' +
+        '</button>';
+    });
+
+  } else if (typeof property.pdf_url === "string" && property.pdf_url.trim() !== '') {
+
+    iconsHTML += '<button class="wh-property-icon-btn pdf-btn right" ' +
+      'style="top:10px;" ' +
+      'onclick="event.stopPropagation(); window.open(\'' + property.pdf_url + '\', \'_blank\')" ' +
+      'title="Descargar PDF">' +
+      '<i class="fas fa-file-pdf wh-icon-pdf"></i>' +
+      '</button>';
+
+  } else if (property.pdf_file && property.pdf_file.trim() !== '') {
+
+    iconsHTML += '<button class="wh-property-icon-btn pdf-btn right" ' +
+      'style="top:10px;" ' +
+      'onclick="event.stopPropagation(); window.open(\'' + property.pdf_file + '\', \'_blank\')" ' +
+      'title="Descargar PDF">' +
+      '<i class="fas fa-file-pdf wh-icon-pdf"></i>' +
+      '</button>';
+  }
+}
+            iconsHTML += '</div>';
+
+            return '<div class="wh-property-card">' +
+                '<div class="wh-property-image" onclick="whShowInfo(' + property.id + ')">' +
+                '<img decoding="async" src="' + property.imagen + '" alt="' + property.titulo + '">' +
+                iconsHTML +
+                '</div>' +
+                '<div class="wh-property-content">' +
+                '<h3 class="wh-property-title">' + property.titulo + '</h3>' +
+                priceHTML +
+                '<p class="wh-property-description">' + property.descripcion_corta + '</p>' +
+                '<div class="wh-property-actions">' +
+                '<button class="wh-btn wh-btn-info" onclick="whShowInfo(' + property.id + ')">' +
+                'Detalles' +
+                '</button>' +
+                '<button class="wh-btn wh-btn-whatsapp" onclick="whShowContact(' + property.id + ')">' +
+                '<i class="fab fa-whatsapp"></i> Me interesa' +
+                '</button>' +
+                '</div>' +
+                '</div>' +
+                '</div>';
+        }
+
+        window.whShowInfo = function(id) {
+            const property = whAllProperties.find(p => p.id === id);
+            if (!property) return;
+            
+            const modal = document.getElementById('whInfoModal');
+            const content = document.getElementById('whModalInfoContent');
+            
+            const priceText = property.precio_tipo === 'cotizar' ? 'Precio a cotizar' : property.precio;
+            const descripcionHTML = property.descripcion_completa ? 
+                property.descripcion_completa.trim() : 
+                property.descripcion_corta.trim();
+
+           let modalHTML = '<img decoding="async" src="' + (property.imagen_modal || property.imagen) + '" alt="' + property.titulo + '" class="wh-modal-image">';
+            modalHTML += '<div class="wh-info-row"><div class="wh-info-label">Título</div><div class="wh-info-value">' + property.titulo + '</div></div>';
+            modalHTML += '<div class="wh-info-row"><div class="wh-info-label">Precio</div><div class="wh-info-value">' + priceText + '</div></div>';
+            modalHTML += '<div class="wh-info-row"><div class="wh-info-label">Descripción</div><div class="wh-info-value">' + descripcionHTML + '</div></div>';
+            modalHTML += '<div class="wh-info-row"><div class="wh-info-label">ID Propiedad</div><div class="wh-info-value">' + (property.id_custom || 'ID-' + property.id) + '</div></div>';
+            
+            modalHTML += '<button class="wh-btn wh-btn-whatsapp" onclick="whShowContact(' + property.id + ')" style="width: 100%; margin-top: 20px;">' +
+                '<i class="fab fa-whatsapp"></i> Me interesa' +
+                '</button>';
+            
+            content.innerHTML = modalHTML;
+            modal.style.display = 'block';
+            document.body.classList.add('wh-modal-open');
+        }
+
+        window.whShowContact = function(id) {
+            const property = whAllProperties.find(p => p.id === id);
+            if (!property) return;
+            
+            const modal = document.getElementById('whContactModal');
+            document.getElementById('whPropertyData').value = JSON.stringify(property);
+            modal.style.display = 'block';
+            document.body.classList.add('wh-modal-open');
+        }
+
+        window.whCloseModal = function(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.body.classList.remove('wh-modal-open');
+        }
+
+        window.whShowQR = function() {
+            document.getElementById('whQRModal').style.display = 'block';
+            document.body.classList.add('wh-modal-open');
+        }
+
+        window.whOpenVideoModal = function(videoUrl) {
+            let embedUrl = videoUrl;
+            
+            if (videoUrl.includes('youtube.com/watch?v=')) {
+                const videoId = videoUrl.split('v=')[1].split('&')[0];
+                embedUrl = 'https://www.youtube.com/embed/' + videoId;
+            } else if (videoUrl.includes('youtu.be/')) {
+                const videoId = videoUrl.split('youtu.be/')[1].split('?')[0];
+                embedUrl = 'https://www.youtube.com/embed/' + videoId;
+            } else if (videoUrl.includes('facebook.com')) {
+                embedUrl = 'https://www.facebook.com/plugins/video.php?href=' + encodeURIComponent(videoUrl);
+            }
+            
+            const videoModal = document.createElement('div');
+            videoModal.className = 'wh-modal wh-video-modal';
+            videoModal.style.display = 'block';
+            videoModal.innerHTML = '<div class="wh-modal-content" style="max-width: 900px;">' +
+                '<div class="wh-modal-header">' +
+                '<h3>🎬 Video</h3>' +
+                '<button class="wh-close-modal" onclick="this.closest(\'.wh-modal\').remove(); document.body.classList.remove(\'wh-modal-open\');">&times;</button>' +
+                '</div>' +
+                '<div class="wh-modal-body" style="padding: 0;">' +
+                '<div class="wh-video-container">' +
+                '<iframe src="' + embedUrl + '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%; height: 500px; border-radius: 0 0 12px 12px;"></iframe>' +
+                '</div>' +
+                '</div>' +
+                '</div>';
+            
+            document.body.appendChild(videoModal);
+            document.body.classList.add('wh-modal-open');
+        }
+window.whOpenMapModal = function(mapUrl) {
+
+let embedUrl = mapUrl;
+
+/* links cortos de google maps */
+if (mapUrl.includes("maps.app.goo.gl")) {
+    window.open(mapUrl, "_blank");
+    return;
+}
+
+/* convertir links normales a embed */
+if (mapUrl.includes("google.com/maps") && !mapUrl.includes("/embed")) {
+
+    if (mapUrl.includes("/place/")) {
+        const place = mapUrl.split("/place/")[1];
+        embedUrl = "https://www.google.com/maps?q=" + place + "&output=embed";
+    }
+
+    else if (mapUrl.includes("/search/")) {
+        const search = mapUrl.split("/search/")[1];
+        embedUrl = "https://www.google.com/maps?q=" + search + "&output=embed";
+    }
+
+    else if (mapUrl.includes("?q=")) {
+        const query = mapUrl.split("?q=")[1].split("&")[0];
+        embedUrl = "https://www.google.com/maps?q=" + query + "&output=embed";
+    }
+
+}
+
+/* crear modal */
+
+const mapModal = document.createElement("div");
+mapModal.className = "wh-modal wh-map-modal";
+mapModal.style.display = "block";
+
+mapModal.innerHTML =
+'<div class="wh-modal-content" style="max-width:900px;">' +
+'<div class="wh-modal-header">' +
+'<h3>📍 Ubicación</h3>' +
+'<button class="wh-close-modal" onclick="this.closest(\'.wh-modal\').remove(); document.body.classList.remove(\'wh-modal-open\');">&times;</button>' +
+'</div>' +
+'<div class="wh-modal-body" style="padding:0;">' +
+'<iframe src="' + embedUrl + '" frameborder="0" style="width:100%; height:500px;" allowfullscreen loading="lazy"></iframe>' +
+'</div>' +
+'</div>';
+
+document.body.appendChild(mapModal);
+document.body.classList.add("wh-modal-open");
+
+}
+window.whOpenGalleryById = function(propertyId) {
+    const property = whAllProperties.find(p => p.id === propertyId);
+    if (!property) return;
+
+    const url = property.galeria_url || '';         // Primero la URL normal del JSON
+    const fbUrl = property.galeria_facebook || ''; // Facebook solo como respaldo
+
+    if (url.trim() !== '') {
+        window.open(url, '_blank'); // Abre la URL de galería del JSON
+    } 
+    else if (fbUrl.trim() !== '') {
+        window.open(fbUrl, '_blank'); // Solo si no hay URL normal
+    } 
+    else {
+        alert('No hay galería disponible');
+    }
+}
+
+        document.getElementById('whContactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('whContactName').value;
+            const email = document.getElementById('whContactEmail').value;
+            const phone = document.getElementById('whContactPhone').value;
+            const propertyData = JSON.parse(document.getElementById('whPropertyData').value);
+            
+            const priceText = propertyData.precio_tipo === 'cotizar' ? 'Precio a cotizar' : propertyData.precio;
+            const idText = propertyData.id_custom || 'ID-' + propertyData.id;
+            
+            const message = 'Hola, mi nombre es ' + name + '.%0A%0A' +
+                          'Me interesa la propiedad:%0A' +
+                          '📍 *' + propertyData.titulo + '*%0A' +
+                          '💰 ' + priceText + '%0A' +
+                          '🆔 ' + idText + '%0A%0A' +
+                          'Mis datos de contacto:%0A' +
+                          '📧 Email: ' + email + '%0A' +
+                          '📱 Teléfono: ' + phone + '%0A%0A' +
+                          'Espero su respuesta. ¡Gracias!';
+            
+            const whatsappUrl = 'https://wa.me/525515132696?text=' + message;
+            window.open(whatsappUrl, '_blank');
+            
+            whCloseModal('whContactModal');
+            this.reset();
+        });
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('wh-modal')) {
+                event.target.style.display = 'none';
+                document.body.classList.remove('wh-modal-open');
+            }
+        }
+    })();</script>
+    </div>
+						</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				</div>
+		
+</main><!--/.neve-main-->
+
+<button tabindex="0" id="scroll-to-top" class="scroll-to-top scroll-to-top-left  scroll-show-mobile icon" aria-label="Scroll al inicio"><svg class="scroll-to-top-icon" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15"><rect width="15" height="15" fill="none"/><path fill="currentColor" d="M7.86,1.93l5.83,10.2a.8.8,0,0,1-1.08,1.1L8,10.65a.83.83,0,0,0-.78,0L2.39,13.36a.79.79,0,0,1-1.1-1L6.45,2A.8.8,0,0,1,7.86,1.93Z"/></svg></button>		<footer itemtype="https://schema.org/WPFooter" itemscope="itemscope" id="colophon" role="contentinfo">
+			<div class='footer-width-fixer'>		<div data-elementor-type="wp-post" data-elementor-id="83" class="elementor elementor-83">
+						<section class="elementor-section elementor-top-section elementor-element elementor-element-31de506 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="31de506" data-element_type="section" data-e-type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-3bfa61c" data-id="3bfa61c" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap">
+							</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-b2e4af7" data-id="b2e4af7" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-01b6651 elementor-widget elementor-widget-copyright" data-id="01b6651" data-element_type="widget" data-e-type="widget" data-settings="{&quot;align&quot;:&quot;center&quot;}" data-widget_type="copyright.default">
+				<div class="elementor-widget-container">
+							<div class="hfe-copyright-wrapper">
+							<a href="https://creaciones19.github.io/servicios-web/" target="_blank" rel="nofollow">
+                            <span>Copyright © 2026 | Creaciones19</span>
+                            </a>
+					</div>
+						</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-584659d" data-id="584659d" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-74ad345 elementor-view-default elementor-widget elementor-widget-icon" data-id="74ad345" data-element_type="widget" data-e-type="widget" data-widget_type="icon.default">
+							<div class="elementor-icon-wrapper">
+				<a class="elementor-icon" href="https://creaciones19.github.io/servicios-web/" target="_blank">
+			<svg aria-hidden="true" class="e-font-icon-svg e-fas-toggle-on" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><path d="M384 64H192C86 64 0 150 0 256s86 192 192 192h192c106 0 192-86 192-192S490 64 384 64zm0 320c-70.8 0-128-57.3-128-128 0-70.8 57.3-128 128-128 70.8 0 128 57.3 128 128 0 70.8-57.3 128-128 128z"></path></svg>			</a>
+		</div>
+						</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				</div>
+		</div>		</footer>
+	
+</div><!--/.wrapper-->
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/neve/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+    <script>
+    jQuery(document).ready(function($) {
+        // Agregar placeholder al campo de búsqueda
+        $(document).on('DOMNodeInserted', function(e) {
+            var searchInput = $('#media-search-input');
+            if (searchInput.length && !searchInput.attr('placeholder')) {
+                searchInput.attr('placeholder', 'Buscar medios');
+            }
+        });
+        
+        // También intentar inmediatamente
+        setTimeout(function() {
+            $('#media-search-input').attr('placeholder', 'Buscar medios');
+        }, 100);
+        
+        // Para cuando se abre el media library
+        $(document).on('click', '.wh-btn-media', function() {
+            setTimeout(function() {
+                $('#media-search-input').attr('placeholder', 'Buscar medios');
+            }, 200);
+        });
+    });
+    </script>
+    
+<div class="xoo-el-container xoo-el-style-popup" style="visibility: hidden;">
+    <div class="xoo-el-opac"></div>
+    <div class="xoo-el-modal">
+        <div class="xoo-el-inmodal">
+            <span class="xoo-el-close xoo-el-icon-cross"></span>
+            <div class="xoo-el-wrap">
+                <div class="xoo-el-sidebar"></div>
+                <div class="xoo-el-srcont">
+                    <div class="xoo-el-main">
+<div class="xoo-el-form-container xoo-el-form-popup" data-active="login">
+
+	
+	
+	
+<div class="xoo-el-header">
+	<ul class="xoo-el-tabs">
+		
+        		  <li data-tab="login" class="xoo-el-login-tgr" style="order: 1 ">Acceder</li>
+        
+		
+	</ul>
+</div>
+	
+	
+		
+			
+		<div data-section="login" class="xoo-el-section">
+
+			<div class="xoo-el-fields">
+
+				<div class="xoo-el-notice"></div>
+				<form class="xoo-el-action-form xoo-el-form-login">
+
+					
+					<div class="xoo-el-fields-cont"><div class="xoo-aff-group xoo-aff-cont-text one xoo-aff-cont-required xoo-el-username_cont"><div class="xoo-aff-input-group"><span class="xoo-aff-input-icon fas fa-user-plus"></span><input type="text" class="xoo-aff-required xoo-aff-text xoo-aff-field" name="xoo-el-username" placeholder="Nombre de usuario / Correo electrónico"  value="" required="	" autocomplete="username"/></div></div><div class="xoo-aff-group xoo-aff-cont-password one xoo-aff-cont-required xoo-el-password_cont"><div class="xoo-aff-input-group"><span class="xoo-aff-input-icon fas fa-key"></span><input type="password" class="xoo-aff-required xoo-aff-password xoo-aff-field" name="xoo-el-password" placeholder="Contraseña"  value="" required="	" autocomplete="current-password"/><div class="xoo-aff-pw-toggle">
+					<span class="xoo-aff-pwtog-show"><i class="far fa-eye"></i></span>
+					<span class="xoo-aff-pwtog-hide"><i class="far fa-eye-slash"></i></span>
+					</div></div></div></div>
+<div class="xoo-aff-group xoo-el-login-btm-fields">
+	<label class="xoo-el-form-label">
+		<input type="checkbox" name="xoo-el-rememberme" value="forever" />
+		<span>Recuérdame</span>
+	</label>
+	<a class="xoo-el-lostpw-tgr" rel="nofollow" href="#">¿Has olvidado la contraseña?</a>
+</div>
+
+
+<input type="hidden" name="_xoo_el_form" value="login">
+
+<button type="submit" class="button btn xoo-el-action-btn xoo-el-login-btn" >Acceder</button>
+
+<input type="hidden" name="xoo_el_redirect" value="https://wh.idcardqr.com/propiedades/">
+					
+				</form>
+
+				
+	
+	
+
+	
+	
+			</div>
+
+		</div>
+
+	
+		
+			
+		<div data-section="lostpw" class="xoo-el-section">
+
+			<div class="xoo-el-fields">
+
+				<div class="xoo-el-notice"></div>
+				<form class="xoo-el-action-form xoo-el-form-lostpw">
+
+					
+					
+
+<span class="xoo-el-form-txt">¿Has perdido tu contraseña? Por favor, introduce tu nombre de usuario o dirección de correo electrónico. Recibirás por correo electrónico un enlace para crear una nueva contraseña.</span>
+
+<div class="xoo-el-fields-cont"><div class="xoo-aff-group xoo-aff-cont-text one xoo-aff-cont-required user_login_cont"><div class="xoo-aff-input-group"><span class="xoo-aff-input-icon fas fa-user-plus"></span><input type="text" class="xoo-aff-required xoo-aff-text xoo-aff-field" name="user_login" placeholder="Nombre de usuario / Correo electrónico"  value="" required="	"/></div></div></div>
+
+<input type="hidden" name="_xoo_el_form" value="lostPassword">
+
+<input type="hidden" name="_wp_http_referer" value="/?fbclid=IwY2xjawQdkTNleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAwyNTYyODEwNDA1NTgAAR6eJ_mSAgqs9hO0N1JBRBTJN5h7knlkDEm5sZeEPKeZUy_4uq1vvSfysanXiw_aem_tXeRDPj4wnh8dA5sC5En4w" />
+<button type="submit" class="button btn xoo-el-action-btn xoo-el-lostpw-btn">Enviar el enlace para restablecer</button>
+					
+				</form>
+
+				
+	
+	
+
+	
+	
+			</div>
+
+		</div>
+
+	
+	
+</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="xoo-el-popup-notice" style="visibility: hidden;">
+    <div class="xoo-el-notice-opac"></div>
+    <div class="xoo-el-notice-modal">
+        <div class="xoo-el-notice-inmodal">
+            <span class="xoo-el-notice-close xoo-el-icon-cross"></span>
+            <div class="xoo-el-notice-wrap">
+               <iframe></iframe>
+               <div class="xoo-el-notice-iframestyle" style="display: none;">
+                   body::-webkit-scrollbar {
+                        width: 7px;
+                    }
+
+                    body::-webkit-scrollbar-track {
+                        border-radius: 10px;
+                        background: #f0f0f0;
+                    }
+
+                    body::-webkit-scrollbar-thumb {
+                        border-radius: 50px;
+                        background: #dfdbdb
+                    }
+               </div>
+            </div>
+        </div>
+    </div>
+</div>			<script>
+				const lazyloadRunObserver = () => {
+					const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
+					const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
+						entries.forEach( ( entry ) => {
+							if ( entry.isIntersecting ) {
+								let lazyloadBackground = entry.target;
+								if( lazyloadBackground ) {
+									lazyloadBackground.classList.add( 'e-lazyloaded' );
+								}
+								lazyloadBackgroundObserver.unobserve( entry.target );
+							}
+						});
+					}, { rootMargin: '200px 0px 200px 0px' } );
+					lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
+						lazyloadBackgroundObserver.observe( lazyloadBackground );
+					} );
+				};
+				const events = [
+					'DOMContentLoaded',
+					'elementor/lazyload/observe',
+				];
+				events.forEach( ( event ) => {
+					document.addEventListener( event, lazyloadRunObserver );
+				} );
+			</script>
+			<script id="xoo-el-js-js-extra">
+var xoo_el_localize = {"adminurl":"https://wh.idcardqr.com/wp-admin/admin-ajax.php","redirectDelay":"300","html":{"spinner":"\u003Ci class=\"xoo-el-icon-spinner8 xoo-el-spinner\"\u003E\u003C/i\u003E","editField":"\u003Cspan class=\"xoo-el-edit-em\"\u003EChange?\u003C/span\u003E","notice":{"error":"\u003Cdiv class=\"xoo-el-notice-error \"\u003E%s\u003C/div\u003E","success":"\u003Cdiv class=\"xoo-el-notice-success \"\u003E%s\u003C/div\u003E"}},"autoOpenPopup":"no","autoOpenPopupOnce":"no","aoDelay":"500","loginClass":"","registerClass":"","errorLog":"no","resetPwPattern":"link","resend_wait":"90","preventClosing":"","hasCodeForms":"","isLoggedIn":"no"};
+//# sourceURL=xoo-el-js-js-extra
+</script>
+<script src="https://wh.idcardqr.com/wp-content/plugins/easy-login-woocommerce/assets/js/xoo-el-js.js?ver=3.1.2" id="xoo-el-js-js"></script>
+<script src="https://wh.idcardqr.com/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.35.6" id="elementor-webpack-runtime-js"></script>
+<script src="https://wh.idcardqr.com/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.35.6" id="elementor-frontend-modules-js"></script>
+<script src="https://wh.idcardqr.com/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3" id="jquery-ui-core-js"></script>
+<script id="elementor-frontend-js-before">
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Compartir en Facebook","shareOnTwitter":"Compartir en Twitter","pinIt":"Pinear","download":"Descargar","downloadImage":"Descargar imagen","fullscreen":"Pantalla completa","zoom":"Zoom","share":"Compartir","playVideo":"Reproducir v\u00eddeo","previous":"Anterior","next":"Siguiente","close":"Cerrar","a11yCarouselPrevSlideMessage":"Diapositiva anterior","a11yCarouselNextSlideMessage":"Diapositiva siguiente","a11yCarouselFirstSlideMessage":"Esta es la primera diapositiva","a11yCarouselLastSlideMessage":"Esta es la \u00faltima diapositiva","a11yCarouselPaginationBulletMessage":"Ir a la diapositiva"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"M\u00f3vil vertical","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"M\u00f3vil horizontal","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tableta vertical","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tableta horizontal","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Port\u00e1til","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Pantalla grande","value":2400,"default_value":2400,"direction":"min","is_enabled":false}},"hasCustomBreakpoints":false},"version":"3.35.6","is_static":false,"experimentalFeatures":{"e_font_icon_svg":true,"additional_custom_breakpoints":true,"e_optimized_markup":true,"e_pro_free_trial_popup":true,"home_screen":true,"global_classes_should_enforce_capabilities":true,"e_variables":true,"cloud-library":true,"e_opt_in_v4_page":true,"e_components":true,"e_interactions":true,"e_editor_one":true,"import-export-customization":true},"urls":{"assets":"https:\/\/wh.idcardqr.com\/wp-content\/plugins\/elementor\/assets\/","ajaxurl":"https:\/\/wh.idcardqr.com\/wp-admin\/admin-ajax.php","uploadUrl":"https:\/\/wh.idcardqr.com\/wp-content\/uploads"},"nonces":{"floatingButtonsClickTracking":"0034cfbe33"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":10,"title":"WhatsHouse%20%E2%80%93%20Tu%20tarjeta%20digital%20tipo%20web%20app%20al%20alcance%20de%20tu%20bolsillo%20y%20directo%20a%20tu%20whatsapp%2C%20administrable%20y%20100%25%20para%20m%C3%B3viles.","excerpt":"","featuredImage":"https:\/\/wh.idcardqr.com\/wp-content\/uploads\/2026\/01\/whatshouse-tarjeta-digital-mas-catalogo-de-propiedades-por-ariapsa-mexico-Destacado.png"}};
+//# sourceURL=elementor-frontend-js-before
+</script>
+<script src="https://wh.idcardqr.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.35.6" id="elementor-frontend-js"></script>
+<script id="neve-script-js-extra">
+var NeveProperties = {"ajaxurl":"https://wh.idcardqr.com/wp-admin/admin-ajax.php","nonce":"06cdd5e549","isRTL":"","isCustomize":""};
+//# sourceURL=neve-script-js-extra
+</script>
+<script src="https://wh.idcardqr.com/wp-content/themes/neve/assets/js/build/modern/frontend.js?ver=4.2.2" id="neve-script-js" async></script>
+<script id="neve-script-js-after">
+	var html = document.documentElement;
+	var theme = html.getAttribute('data-neve-theme') || 'light';
+	var variants = {"logo":{"light":{"src":false,"srcset":false,"sizes":false},"dark":{"src":false,"srcset":false,"sizes":false},"same":true}};
+
+	function setCurrentTheme( theme ) {
+		var pictures = document.getElementsByClassName( 'neve-site-logo' );
+		for(var i = 0; i<pictures.length; i++) {
+			var picture = pictures.item(i);
+			if( ! picture ) {
+				continue;
+			};
+			var fileExt = picture.src.slice((Math.max(0, picture.src.lastIndexOf(".")) || Infinity) + 1);
+			if ( fileExt === 'svg' ) {
+				picture.removeAttribute('width');
+				picture.removeAttribute('height');
+				picture.style = 'width: var(--maxwidth)';
+			}
+			var compId = picture.getAttribute('data-variant');
+			if ( compId && variants[compId] ) {
+				var isConditional = variants[compId]['same'];
+				if ( theme === 'light' || isConditional || variants[compId]['dark']['src'] === false ) {
+					picture.src = variants[compId]['light']['src'];
+					picture.srcset = variants[compId]['light']['srcset'] || '';
+					picture.sizes = variants[compId]['light']['sizes'];
+					continue;
+				};
+				picture.src = variants[compId]['dark']['src'];
+				picture.srcset = variants[compId]['dark']['srcset'] || '';
+				picture.sizes = variants[compId]['dark']['sizes'];
+			};
+		};
+	};
+
+	var observer = new MutationObserver(function(mutations) {
+		mutations.forEach(function(mutation) {
+			if (mutation.type == 'attributes') {
+				theme = html.getAttribute('data-neve-theme');
+				setCurrentTheme(theme);
+			};
+		});
+	});
+
+	observer.observe(html, {
+		attributes: true
+	});
+function toggleAriaClick() { function toggleAriaExpanded(toggle = 'true') { document.querySelectorAll('button.navbar-toggle').forEach(function(el) { if ( el.classList.contains('caret-wrap') ) { return; } el.setAttribute('aria-expanded', 'true' === el.getAttribute('aria-expanded') ? 'false' : toggle); }); } toggleAriaExpanded(); if ( document.body.hasAttribute('data-ftrap-listener') ) { return; } document.body.setAttribute('data-ftrap-listener', 'true'); document.addEventListener('ftrap-end', function() { toggleAriaExpanded('false'); }); }
+//# sourceURL=neve-script-js-after
+</script>
+<script id="neve-scroll-to-top-js-extra">
+var neveScrollOffset = {"offset":"150"};
+//# sourceURL=neve-scroll-to-top-js-extra
+</script>
+<script src="https://wh.idcardqr.com/wp-content/themes/neve/assets/js/build/modern/scroll-to-top.js?ver=4.2.2" id="neve-scroll-to-top-js" async></script>
+<script id="wp-statistics-tracker-js-extra">
+var WP_Statistics_Tracker_Object = {"requestUrl":"https://wh.idcardqr.com/wp-json/wp-statistics/v2","ajaxUrl":"https://wh.idcardqr.com/wp-admin/admin-ajax.php","hitParams":{"wp_statistics_hit":1,"source_type":"home","source_id":10,"search_query":"","signature":"aa4ca5bcb1e591b550391645422ee98f","endpoint":"hit"},"option":{"dntEnabled":false,"bypassAdBlockers":false,"consentIntegration":{"name":null,"status":[]},"isPreview":false,"userOnline":false,"trackAnonymously":false,"isWpConsentApiActive":false,"consentLevel":"functional"},"isLegacyEventLoaded":"","customEventAjaxUrl":"https://wh.idcardqr.com/wp-admin/admin-ajax.php?action=wp_statistics_custom_event&nonce=71ceda1769","onlineParams":{"wp_statistics_hit":1,"source_type":"home","source_id":10,"search_query":"","signature":"aa4ca5bcb1e591b550391645422ee98f","action":"wp_statistics_online_check"},"jsCheckTime":"60000"};
+//# sourceURL=wp-statistics-tracker-js-extra
+</script>
+<script src="https://wh.idcardqr.com/wp-content/plugins/wp-statistics/assets/js/tracker.js?ver=14.16.3" id="wp-statistics-tracker-js"></script>
+<script src="https://wh.idcardqr.com/wp-content/plugins/header-footer-elementor/inc/js/frontend.js?ver=2.8.4" id="hfe-frontend-js-js"></script>
+<script src="https://wh.idcardqr.com/wp-content/plugins/dynamic-visibility-for-elementor/assets/js/visibility.js?ver=6.0.2" id="dce-visibility-js"></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://wh.idcardqr.com/wp-includes/js/wp-emoji-release.min.js?ver=6.9.2"}}
+</script>
+<script type="module">
+/*! This file is auto-generated */
+const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(window._wpemojiSettings=a,"wpEmojiSettingsSupports"),s=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const a=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===a[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,a){let r;const o=(r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),s=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(e=>{s[e]=t(o,e,n,a)}),s}function r(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}a.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),c.toString(),p.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"});const r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=e=>{i(n=e.data),r.terminate(),t(n)})}catch(e){}i(n=f(s,u,c,p))}t(n)}).then(e=>{for(const n in e)a.supports[n]=e[n],a.supports.everything=a.supports.everything&&a.supports[n],"flag"!==n&&(a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&a.supports[n]);var t;a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&!a.supports.flag,a.supports.everything||((t=a.source||{}).concatemoji?r(t.concatemoji):t.wpemoji&&t.twemoji&&(r(t.twemoji),r(t.wpemoji)))});
+//# sourceURL=https://wh.idcardqr.com/wp-includes/js/wp-emoji-loader.min.js
+</script>
+    <script>
+    console.log('🔧 WhatsHouse Email System v4.0 LOADED');
+    
+    // Esperar a que el DOM esté completamente cargado
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initWhatsHouseEmail);
+    } else {
+        initWhatsHouseEmail();
+    }
+    
+    function initWhatsHouseEmail() {
+        console.log('🎬 Inicializando sistema de email...');
+        
+        const form = document.getElementById('whContactForm');
+        
+        if (!form) {
+            console.error('❌ Formulario #whContactForm no encontrado');
+            return;
+        }
+        
+        console.log('✅ Formulario encontrado');
+        
+        // Remover eventos anteriores clonando el elemento
+        const newForm = form.cloneNode(true);
+        form.parentNode.replaceChild(newForm, form);
+        
+        // Añadir evento al nuevo formulario
+        newForm.addEventListener('submit', handleFormSubmit);
+        
+        console.log('✅ Listener del formulario agregado');
+    }
+    
+    async function handleFormSubmit(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        console.log('📝 Formulario enviado');
+        
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalHTML = submitBtn.innerHTML;
+        
+        // Deshabilitar botón y mostrar loading
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+        
+        // Obtener datos del formulario
+        const nombre = document.getElementById('whContactName').value.trim();
+        const email = document.getElementById('whContactEmail').value.trim();
+        const telefono = document.getElementById('whContactPhone').value.trim();
+        const propertyData = JSON.parse(document.getElementById('whPropertyData').value);
+        
+        console.log('📦 Datos:', {nombre, email, telefono, propiedad: propertyData.titulo});
+        
+        // Validación básica
+        if (!nombre || !email || !telefono) {
+            alert('Por favor completa todos los campos');
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalHTML;
+            return;
+        }
+        
+        const priceText = propertyData.precio_tipo === 'cotizar' ? 'Precio a cotizar' : propertyData.precio;
+        const idText = propertyData.id_custom || 'ID-' + propertyData.id;
+        
+        // Obtener nonce
+        const nonceInput = document.getElementById('whatshouse_email_nonce');
+        const nonce = nonceInput ? nonceInput.value : '';
+        
+        console.log('🔑 Nonce:', nonce ? 'OK' : 'FALTA');
+        
+        try {
+            // Preparar datos
+            const formData = new FormData();
+            formData.append('action', 'whatshouse_send_email');
+            formData.append('nonce', nonce);
+            formData.append('nombre', nombre);
+            formData.append('email', email);
+            formData.append('telefono', telefono);
+            formData.append('propiedad_titulo', propertyData.titulo);
+            formData.append('propiedad_precio', priceText);
+            formData.append('propiedad_id', idText);
+            
+            console.log('📤 Enviando a:', 'https://wh.idcardqr.com/wp-admin/admin-ajax.php');
+            
+            // Enviar petición
+            const response = await fetch('https://wh.idcardqr.com/wp-admin/admin-ajax.php', {
+                method: 'POST',
+                body: formData
+            });
+            
+            console.log('📨 Respuesta HTTP:', response.status);
+            
+            const result = await response.json();
+            console.log('📨 Respuesta JSON:', result);
+            
+            if (result.success) {
+                console.log('✅ Emails enviados correctamente');
+                
+                // Preparar mensaje de WhatsApp
+                const message = 'Hola, mi nombre es ' + nombre + '.%0A%0A' +
+                              'Me interesa la propiedad:%0A' +
+                              '📍 *' + propertyData.titulo + '*%0A' +
+                              '💰 ' + priceText + '%0A' +
+                              '🆔 ' + idText + '%0A%0A' +
+                              'Mis datos de contacto:%0A' +
+                              '📧 Email: ' + email + '%0A' +
+                              '📱 Teléfono: ' + telefono + '%0A%0A' +
+                              'Espero su respuesta. ¡Gracias!';
+                
+                // Abrir WhatsApp
+                window.open('https://wa.me/525515132696?text=' + message, '_blank');
+                
+                // Cerrar modal
+                if (typeof whCloseModal === 'function') {
+                    whCloseModal('whContactModal');
+                }
+                
+                // Resetear formulario
+                document.getElementById('whContactForm').reset();
+                
+            } else {
+                console.error('❌ Error:', result.data.message);
+                alert('Error: ' + result.data.message);
+            }
+            
+        } catch (error) {
+            console.error('❌ Error de red:', error);
+            alert('Error de conexión. Por favor intenta de nuevo.');
+        }
+        
+        // Restaurar botón
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalHTML;
+    }
+    </script>
+        
+   <!-- WhatsHouse Bottom Menu v2.0 -->
+   <div id="whBottomMenu" class="wh-bottom-menu">
+        <div class="wh-bottom-menu-content">
+            
+            
+            <!-- Botón 1: Scroll to Top -->
+            <button class="wh-menu-btn" onclick="whScrollToTop()" title="Inicio" aria-label="Ir al inicio">
+                <i class="fas fa-home"></i>
+                <span class="wh-menu-label">Inicio</span>
+            </button>
+        <!-- Botón 2: Teléfono -->
+        <a href="tel:3343340062" class="wh-menu-btn" title="Llamar" aria-label="Llamar por teléfono">
+            <i class="fas fa-phone"></i>
+            <span class="wh-menu-label">Llamar</span>
+        </a>
+        
+        <!-- Botón 3: WhatsApp -->
+        <a href="https://wa.me/523343340062?text=Hola%20DYNAH%20GOMEZ%2C%20me%20interesa%20informaci%C3%B3n%20sobre%20las%20propiedades." 
+           target="_blank" class="wh-menu-btn wh-menu-whatsapp" title="WhatsApp" aria-label="Contactar por WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+            <span class="wh-menu-label">WhatsApp</span>
+        </a>
+        
+        <!-- Botón 4: Compartir -->
+        <button class="wh-menu-btn" onclick="whToggleShare()" title="Compartir" aria-label="Compartir página">
+            <i class="fas fa-share-alt"></i>
+            <span class="wh-menu-label">Compartir</span>
+        </button>
+        
+        <!-- Botón 5: Menú -->
+        <button class="wh-menu-btn" onclick="whToggleMenu()" title="Menú" aria-label="Abrir menú">
+            <i class="fas fa-bars"></i>
+            <span class="wh-menu-label">Menú</span>
+        </button>
+        
+    </div>
+    
+    <!-- Indicador de minimizado -->
+    <div class="wh-minimize-indicator">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+
+<!-- Panel de Compartir -->
+<div id="whSharePanel" class="wh-share-panel">
+    <div class="wh-share-content">
+        <div class="wh-share-header">
+           <h4>Compartir página</h4>
+            <button class="wh-share-close" onclick="whToggleShare()" aria-label="Cerrar">×</button>
+        </div>
+        <div class="wh-share-buttons">
+
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.facebook.com/dana.montoya.9843?locale=es_LA" 
+               target="_blank" class="wh-share-btn wh-share-facebook" aria-label="Compartir en Facebook">
+                <i class="fab fa-facebook-f"></i>
+                <span>Facebook</span>
+            </a>
+
+            <a href="https://twitter.com/intent/tweet?text=Propiedades%20de%20DYNAH%20GOMEZ" 
+               target="_blank" class="wh-share-btn wh-share-twitter" aria-label="Compartir en Twitter">
+                <i class="fab fa-twitter"></i>
+                <span>Twitter</span>
+            </a>
+
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.facebook.com/dana.montoya.9843?locale=es_LA" 
+               target="_blank" class="wh-share-btn wh-share-linkedin" aria-label="Compartir en LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+                <span>LinkedIn</span>
+            </a>
+
+            <a href="https://wa.me/?text=Propiedades%20de%20DYNAH%20GOMEZ%20https://www.facebook.com/dana.montoya.9843?locale=es_LA" 
+               target="_blank" class="wh-share-btn wh-share-whatsapp" aria-label="Compartir por WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a>
+
+            <button onclick="whCopyLink('https://www.facebook.com/dana.montoya.9843?locale=es_LA', 'Propiedades de DYNAH GOMEZ')" 
+                    class="wh-share-btn wh-share-copy" aria-label="Copiar enlace">
+                <i class="fas fa-link"></i>
+                <span>Copiar enlace</span>
+            </button>
+
+        </div>
+    </div>
+</div>
+
+<!-- Panel de Menú (con categorías) -->
+<div id="whMenuPanel" class="wh-menu-panel">
+    <div class="wh-menu-content">
+        <div class="wh-menu-header">
+            <h4>Menú</h4>
+            <button class="wh-menu-close" onclick="whToggleMenu()" aria-label="Cerrar menú">×</button>
+        </div>
+        
+        <!-- Opciones de visualización -->
+        <div class="wh-menu-options">
+            <button class="wh-option-btn" onclick="whToggleDarkMode()" aria-label="Cambiar modo oscuro/claro">
+                <i class="fas fa-moon" id="whDarkModeIcon"></i>
+                <span id="whDarkModeText">Modo Oscuro</span>
+            </button>
+            
+            <button class="wh-option-btn" onclick="whToggleMinimize()" aria-label="Minimizar menú">
+                <i class="fas fa-compress-alt"></i>
+                <span>Minimizar</span>
+            </button>
+        </div>
+        
+        <!-- Categorías -->
+        <div class="wh-menu-categories">
+            <h5>Filtrar propiedades</h5>
+            <div class="wh-categories-list">
+
+                <button class="wh-category-btn wh-active" data-category="all" onclick="whFilterCategory('all')">
+                    <i class="fas fa-th"></i>
+                    <span>Todas las propiedades</span>
+                </button>
+
+              
+
+                <button class="wh-category-btn" data-category="casas" onclick="whFilterCategory('casas')">
+                    <i class="fas fa-folder"></i>
+                    <span>Casas</span>
+                </button>
+
+                <button class="wh-category-btn" data-category="terrenos" onclick="whFilterCategory('terrenos')">
+                    <i class="fas fa-folder"></i>
+                    <span>Terrenos</span>
+                </button>
+
+                <button class="wh-category-btn" data-category="comercial" onclick="whFilterCategory('comercial')">
+                    <i class="fas fa-folder"></i>
+                    <span>Comercial</span>
+                </button>
+
+                
+
+                <button class="wh-category-btn" data-category="promocionales" onclick="whFilterCategory('promocionales')">
+                    <i class="fas fa-folder"></i>
+                    <span>Promocionales</span>
+                </button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Overlay para cerrar paneles -->
+<div id="whMenuOverlay" class="wh-menu-overlay" onclick="whCloseAllPanels()"></div>
+
+    <style>
+    /* ===== VARIABLES CSS ===== */
+    :root {
+        --wh-menu-bg: rgba(45, 55, 72, 0.98);
+        --wh-menu-border: rgba(255, 255, 255, 0.1);
+        --wh-menu-text: rgba(255, 255, 255, 0.7);
+        --wh-menu-text-active: #ffffff;
+        --wh-menu-hover: rgba(255, 255, 255, 0.1);
+        --wh-whatsapp: #25D366;
+    }
+    
+    body.wh-dark-mode {
+        --wh-menu-bg: rgba(26, 32, 44, 0.98);
+        --wh-menu-hover: rgba(255, 255, 255, 0.15);
+    }
+    
+    body.wh-light-mode {
+        --wh-menu-bg: rgba(255, 255, 255, 0.98);
+        --wh-menu-border: rgba(0, 0, 0, 0.1);
+        --wh-menu-text: rgba(0, 0, 0, 0.6);
+        --wh-menu-text-active: rgba(0, 0, 0, 0.9);
+        --wh-menu-hover: rgba(0, 0, 0, 0.05);
+    }
+    
+    /* ===== MENÚ FLOTANTE BOTTOM BAR ===== */
+    .wh-bottom-menu {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: var(--wh-menu-bg);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.3);
+        z-index: 999;
+        padding: 8px 0 calc(8px + env(safe-area-inset-bottom));
+        border-top: 1px solid var(--wh-menu-border);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .wh-bottom-menu.wh-minimized {
+        transform: translateY(calc(100% - 30px));
+    }
+    
+    .wh-bottom-menu-content {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+    
+    .wh-menu-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        background: transparent;
+        border: none;
+        color: var(--wh-menu-text);
+        cursor: pointer;
+        padding: 10px 14px;
+        border-radius: 12px;
+        transition: all 0.2s ease;
+        text-decoration: none;
+        min-width: 70px;
+        position: relative;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+    
+    /* Área de clic más grande en móvil */
+    .wh-menu-btn::before {
+        content: '';
+        position: absolute;
+        top: -8px;
+        left: -8px;
+        right: -8px;
+        bottom: -8px;
+        background: transparent;
+    }
+    
+    .wh-menu-btn:hover,
+    .wh-menu-btn:active,
+    .wh-menu-btn:focus {
+        background: var(--wh-menu-hover);
+        color: var(--wh-menu-text-active);
+        transform: translateY(-2px);
+        outline: none;
+    }
+    
+    .wh-menu-btn i {
+        font-size: 22px;
+        pointer-events: none;
+    }
+    
+    .wh-menu-label {
+        font-size: 10px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.3px;
+        white-space: nowrap;
+        pointer-events: none;
+    }
+    
+    .wh-menu-whatsapp {
+        color: var(--wh-whatsapp) !important;
+    }
+    
+    .wh-menu-whatsapp:hover,
+    .wh-menu-whatsapp:active {
+        background: rgba(37, 211, 102, 0.15) !important;
+    }
+    
+    /* ===== INDICADOR DE MINIMIZADO ===== */
+    .wh-minimize-indicator {
+        display: none;
+        justify-content: center;
+        gap: 4px;
+        padding: 8px 0 4px;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+    
+    .wh-bottom-menu.wh-minimized .wh-minimize-indicator {
+        display: flex;
+        opacity: 0.6;
+    }
+    
+    .wh-minimize-indicator span {
+        width: 6px;
+        height: 6px;
+        background: var(--wh-menu-text);
+        border-radius: 50%;
+    }
+    
+    /* ===== PANELES EXPANDIBLES ===== */
+    .wh-share-panel,
+    .wh-menu-panel {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: var(--wh-menu-bg);
+        backdrop-filter: blur(20px);
+        transform: translateY(100%);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 10000;
+        border-radius: 20px 20px 0 0;
+        box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.4);
+        max-height: 75vh;
+        overflow-y: auto;
+        pointer-events: none;
+    }
+    
+    .wh-share-panel.wh-active,
+    .wh-menu-panel.wh-active {
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+    
+    .wh-share-content,
+    .wh-menu-content {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px 20px calc(20px + env(safe-area-inset-bottom));
+    }
+    
+    .wh-share-header,
+    .wh-menu-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid var(--wh-menu-border);
+    }
+    
+    .wh-share-header h4,
+    .wh-menu-header h4 {
+        margin: 0;
+        color: var(--wh-menu-text-active);
+        font-size: 18px;
+        font-weight: 600;
+    }
+    
+    .wh-share-close,
+    .wh-menu-close {
+        background: var(--wh-menu-hover);
+        border: none;
+        color: var(--wh-menu-text-active);
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        font-size: 28px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s;
+        -webkit-tap-highlight-color: transparent;
+        line-height: 1;
+    }
+    
+    .wh-share-close:hover,
+    .wh-menu-close:hover,
+    .wh-share-close:active,
+    .wh-menu-close:active {
+        background: rgba(255, 255, 255, 0.2);
+        transform: rotate(90deg);
+    }
+    
+    /* ===== BOTONES DE COMPARTIR ===== */
+    .wh-share-buttons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .wh-share-btn {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 18px;
+        background: var(--wh-menu-hover);
+        border: 1px solid var(--wh-menu-border);
+        border-radius: 12px;
+        color: var(--wh-menu-text-active);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 14px;
+        transition: all 0.2s;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+    
+    .wh-share-btn:hover,
+    .wh-share-btn:active {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    
+    .wh-share-btn i {
+        font-size: 20px;
+        width: 24px;
+        text-align: center;
+    }
+    
+    .wh-share-facebook:hover, .wh-share-facebook:active { 
+        background: rgba(24, 119, 242, 0.2); 
+        border-color: #1877f2; 
+        color: #1877f2;
+    }
+    .wh-share-twitter:hover, .wh-share-twitter:active { 
+        background: rgba(29, 161, 242, 0.2); 
+        border-color: #1da1f2; 
+        color: #1da1f2;
+    }
+    .wh-share-linkedin:hover, .wh-share-linkedin:active { 
+        background: rgba(0, 119, 181, 0.2); 
+        border-color: #0077b5; 
+        color: #0077b5;
+    }
+    .wh-share-whatsapp:hover, .wh-share-whatsapp:active { 
+        background: rgba(37, 211, 102, 0.2); 
+        border-color: #25d366; 
+        color: #25d366;
+    }
+    .wh-share-copy:hover, .wh-share-copy:active { 
+        background: rgba(102, 126, 234, 0.2); 
+        border-color: #667eea; 
+        color: #667eea;
+    }
+    
+    /* ===== OPCIONES DEL MENÚ ===== */
+    .wh-menu-options {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+    
+    .wh-option-btn {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 16px;
+        background: var(--wh-menu-hover);
+        border: 2px solid var(--wh-menu-border);
+        border-radius: 12px;
+        color: var(--wh-menu-text-active);
+        font-weight: 600;
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 0.2s;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+    
+    .wh-option-btn:hover,
+    .wh-option-btn:active {
+        background: rgba(102, 126, 234, 0.2);
+        border-color: #667eea;
+        transform: translateX(4px);
+    }
+    
+    .wh-option-btn i {
+        font-size: 18px;
+        width: 20px;
+        text-align: center;
+    }
+    
+    /* ===== CATEGORÍAS EN MENÚ ===== */
+    .wh-menu-categories {
+        margin-top: 20px;
+    }
+    
+    .wh-menu-categories h5 {
+        margin: 0 0 15px 0;
+        color: var(--wh-menu-text-active);
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        opacity: 0.8;
+    }
+    
+    .wh-categories-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .wh-category-btn {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 18px;
+        background: var(--wh-menu-hover);
+        border: 2px solid var(--wh-menu-border);
+        border-radius: 12px;
+        color: var(--wh-menu-text-active);
+        font-weight: 500;
+        font-size: 15px;
+        cursor: pointer;
+        transition: all 0.2s;
+        text-align: left;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+    
+    .wh-category-btn:hover,
+    .wh-category-btn:active {
+        background: rgba(102, 126, 234, 0.15);
+        border-color: rgba(102, 126, 234, 0.3);
+        transform: translateX(4px);
+        color: var(--wh-menu-text-active);
+    }
+    
+    .wh-category-btn.wh-active {
+        background: rgba(102, 126, 234, 0.25);
+        border-color: #667eea;
+        color: #667eea;
+    }
+    
+    body.wh-light-mode .wh-category-btn.wh-active {
+        background: rgba(102, 126, 234, 0.15);
+        color: #5a67d8;
+    }
+    
+    .wh-category-btn i,
+    .wh-category-btn .wh-cat-emoji {
+        font-size: 20px;
+        width: 24px;
+        text-align: center;
+    }
+    
+    /* ===== OVERLAY ===== */
+    .wh-menu-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 9998;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+    
+    .wh-menu-overlay.wh-active {
+        display: block;
+        opacity: 1;
+    }
+    
+    /* ===== NOTIFICACIÓN DE COPIADO ===== */
+    .wh-copy-notification {
+        position: fixed;
+        bottom: 100px;
+        left: 50%;
+        transform: translateX(-50%) translateY(100px);
+        background: rgba(16, 185, 129, 0.95);
+        color: white;
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 14px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        z-index: 10001;
+        opacity: 0;
+        transition: all 0.3s ease;
+        pointer-events: none;
+    }
+    
+    .wh-copy-notification.wh-show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    
+    /* ===== RESPONSIVE DESKTOP ===== */
+    @media (min-width: 1024px) {
+        .wh-bottom-menu {
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 600px;
+            border-radius: 20px 20px 0 0;
+            border-left: 1px solid var(--wh-menu-border);
+            border-right: 1px solid var(--wh-menu-border);
+        }
+        
+        .wh-bottom-menu.wh-minimized {
+            transform: translateX(-50%) translateY(calc(100% - 30px));
+        }
+        
+        .wh-share-panel,
+        .wh-menu-panel {
+            left: 50%;
+            transform: translateX(-50%) translateY(100%);
+            width: 100%;
+            max-width: 600px;
+        }
+        
+        .wh-share-panel.wh-active,
+        .wh-menu-panel.wh-active {
+            transform: translateX(-50%) translateY(0);
+        }
+        
+        .wh-menu-btn:hover {
+            transform: translateY(-3px);
+        }
+    }
+    
+    /* ===== AJUSTE PARA CONTENIDO ===== */
+    .whatshouse-container {
+        padding-bottom: 80px !important;
+    }
+    
+    </style>
+    <script>
+    (function() {
+        'use strict';
+        
+        let currentPanel = null;
+        
+        // ===== INICIALIZACIÓN =====
+        document.addEventListener('DOMContentLoaded', function() {
+            whInitDarkMode();
+            whInitMinimize();
+            whSetupEventListeners();
+        });
+        
+        // ===== SCROLL TO TOP =====
+        window.whScrollToTop = function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        };
+        
+        // ===== CERRAR TODOS LOS PANELES =====
+        window.whCloseAllPanels = function() {
+            const sharePanel = document.getElementById('whSharePanel');
+            const menuPanel = document.getElementById('whMenuPanel');
+            const overlay = document.getElementById('whMenuOverlay');
+            
+            if (sharePanel) sharePanel.classList.remove('wh-active');
+            if (menuPanel) menuPanel.classList.remove('wh-active');
+            if (overlay) overlay.classList.remove('wh-active');
+            
+            document.body.style.overflow = '';
+            currentPanel = null;
+        };
+        
+        // ===== TOGGLE PANEL COMPARTIR =====
+        window.whToggleShare = function() {
+            const panel = document.getElementById('whSharePanel');
+            const overlay = document.getElementById('whMenuOverlay');
+            const isActive = panel.classList.contains('wh-active');
+            
+            // Cerrar otros paneles primero
+            whCloseAllPanels();
+            
+            if (!isActive) {
+                panel.classList.add('wh-active');
+                overlay.classList.add('wh-active');
+                document.body.style.overflow = 'hidden';
+                currentPanel = 'share';
+            }
+        };
+        
+        // ===== TOGGLE PANEL MENÚ =====
+        window.whToggleMenu = function() {
+            const panel = document.getElementById('whMenuPanel');
+            const overlay = document.getElementById('whMenuOverlay');
+            const isActive = panel.classList.contains('wh-active');
+            
+            // Cerrar otros paneles primero
+            whCloseAllPanels();
+            
+            if (!isActive) {
+                panel.classList.add('wh-active');
+                overlay.classList.add('wh-active');
+                document.body.style.overflow = 'hidden';
+                currentPanel = 'menu';
+            }
+        };
+        
+// ===== FILTRAR POR CATEGORÍA =====
+window.whFilterCategory = function(category) {
+    console.log('🔍 Filtrando categoría:', category); // Debug
+    
+    // Actualizar botones activos en el menú flotante
+    const categoryBtns = document.querySelectorAll('.wh-category-btn');
+    categoryBtns.forEach(function(btn) {
+        btn.classList.remove('wh-active');
+        if (btn.getAttribute('data-category') === category) {
+            btn.classList.add('wh-active');
+        }
+    });
+    
+    // Sincronizar con menú horizontal de categorías
+    const horizontalItems = document.querySelectorAll('.wh-category-item');
+    horizontalItems.forEach(function(item) {
+        item.classList.remove('wh-active');
+        if (item.getAttribute('data-category') === category) {
+            item.classList.add('wh-active');
+            // Simular clic para activar el filtrado
+            item.click();
+            console.log('✅ Clic simulado en categoría horizontal:', category);
+        }
+    });
+    
+    // Cerrar menú flotante
+    setTimeout(function() {
+        whCloseAllPanels();
+        
+        // Scroll suave a propiedades después de filtrar
+        setTimeout(function() {
+            const container = document.querySelector('.wh-properties-container');
+            if (container) {
+                const yOffset = -20; // Offset para que no quede pegado arriba
+                const y = container.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                
+                window.scrollTo({
+                    top: y,
+                    behavior: 'smooth'
+                });
+                console.log('📜 Scroll a contenedor de propiedades');
+            }
+        }, 100);
+    }, 100);
+};
+        
+        // ===== COPIAR ENLACE =====
+        window.whCopyLink = function(url, title) {
+            const textToCopy = '🏠 ' + title + ' - Conoce más propiedades y detalles en: ' + url;
+            
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    whShowNotification('¡Enlace copiado al portapapeles!');
+                }).catch(() => {
+                    whFallbackCopy(textToCopy);
+                });
+            } else {
+                whFallbackCopy(textToCopy);
+            }
+        };
+        
+        function whFallbackCopy(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            
+            try {
+                document.execCommand('copy');
+                whShowNotification('¡Enlace copiado!');
+            } catch (err) {
+                whShowNotification('Error al copiar');
+            }
+            
+            document.body.removeChild(textarea);
+        }
+        
+        function whShowNotification(message) {
+            let notification = document.getElementById('whCopyNotification');
+            
+            if (!notification) {
+                notification = document.createElement('div');
+                notification.id = 'whCopyNotification';
+                notification.className = 'wh-copy-notification';
+                document.body.appendChild(notification);
+            }
+            
+            notification.textContent = message;
+            notification.classList.add('wh-show');
+            
+            setTimeout(() => {
+                notification.classList.remove('wh-show');
+            }, 3000);
+        }
+        
+        // ===== MODO OSCURO/CLARO =====
+        function whInitDarkMode() {
+            const savedMode = localStorage.getItem('whDarkMode');
+            if (savedMode === 'light') {
+                document.body.classList.add('wh-light-mode');
+                document.body.classList.remove('wh-dark-mode');
+                whUpdateDarkModeUI(false);
+            } else {
+                document.body.classList.add('wh-dark-mode');
+                document.body.classList.remove('wh-light-mode');
+                whUpdateDarkModeUI(true);
+            }
+        }
+        
+        window.whToggleDarkMode = function() {
+            const isDark = document.body.classList.contains('wh-dark-mode');
+            
+            if (isDark) {
+                document.body.classList.remove('wh-dark-mode');
+                document.body.classList.add('wh-light-mode');
+                localStorage.setItem('whDarkMode', 'light');
+                whUpdateDarkModeUI(false);
+            } else {
+                document.body.classList.remove('wh-light-mode');
+                document.body.classList.add('wh-dark-mode');
+                localStorage.setItem('whDarkMode', 'dark');
+                whUpdateDarkModeUI(true);
+            }
+        };
+        
+        function whUpdateDarkModeUI(isDark) {
+            const icon = document.getElementById('whDarkModeIcon');
+            const text = document.getElementById('whDarkModeText');
+            
+            if (icon && text) {
+                if (isDark) {
+                    icon.className = 'fas fa-moon';
+                    text.textContent = 'Modo Oscuro';
+                } else {
+                    icon.className = 'fas fa-sun';
+                    text.textContent = 'Modo Claro';
+                }
+            }
+        }
+        
+        // ===== MINIMIZAR MENÚ =====
+        function whInitMinimize() {
+            const savedState = localStorage.getItem('whMenuMinimized');
+            const menu = document.getElementById('whBottomMenu');
+            
+            if (savedState === 'true' && menu) {
+                menu.classList.add('wh-minimized');
+            }
+        }
+        
+        window.whToggleMinimize = function() {
+            const menu = document.getElementById('whBottomMenu');
+            if (!menu) return;
+            
+            const isMinimized = menu.classList.toggle('wh-minimized');
+            localStorage.setItem('whMenuMinimized', isMinimized ? 'true' : 'false');
+            
+            // Cerrar menú después de minimizar
+            whCloseAllPanels();
+        };
+        
+        // ===== GESTOS TÁCTILES =====
+        function whSetupEventListeners() {
+            const menu = document.getElementById('whBottomMenu');
+            if (!menu) return;
+            
+            let touchStartY = 0;
+            const minSwipeDistance = 50;
+            
+            menu.addEventListener('touchstart', (e) => {
+                touchStartY = e.changedTouches[0].screenY;
+            }, { passive: true });
+            
+            menu.addEventListener('touchend', (e) => {
+                const touchEndY = e.changedTouches[0].screenY;
+                const swipeDistance = touchEndY - touchStartY;
+                
+                if (Math.abs(swipeDistance) >= minSwipeDistance) {
+                    if (swipeDistance > 0) {
+                        // Swipe hacia abajo: minimizar
+                        menu.classList.add('wh-minimized');
+                        localStorage.setItem('whMenuMinimized', 'true');
+                    } else {
+                        // Swipe hacia arriba: expandir
+                        menu.classList.remove('wh-minimized');
+                        localStorage.setItem('whMenuMinimized', 'false');
+                    }
+                }
+            }, { passive: true });
+            
+            // Click en área minimizada para expandir
+            menu.addEventListener('click', (e) => {
+                if (menu.classList.contains('wh-minimized')) {
+                    const rect = menu.getBoundingClientRect();
+                    if (e.clientY < rect.top + 30) {
+                        menu.classList.remove('wh-minimized');
+                        localStorage.setItem('whMenuMinimized', 'false');
+                    }
+                }
+            });
+        }
+        
+        // ===== CERRAR CON ESC =====
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                whCloseAllPanels();
+            }
+        });
+        
+        // ===== PREVENIR SCROLL CUANDO PANEL ESTÁ ABIERTO =====
+        document.addEventListener('touchmove', function(e) {
+            if (currentPanel) {
+                const target = e.target;
+                const isInsidePanel = target.closest('.wh-share-panel.wh-active, .wh-menu-panel.wh-active');
+                
+                if (!isInsidePanel) {
+                    e.preventDefault();
+                }
+            }
+        }, { passive: false });
+        
+    })();
+    </script>
+    
+    <script>
+(function() {
+    // Esperar a que la página cargue completamente
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            var preloader = document.getElementById('watshouse-preloader');
+            
+            if (preloader) {
+                preloader.classList.add('hidden');
+                document.body.classList.add('watshouse-loaded');
+                
+                // Eliminar el preloader del DOM después de la transición
+                setTimeout(function() {
+                    preloader.remove();
+                }, 500);
+            }
+        }, 2500); // Tiempo de visualización del preloader (2.5 segundos)
+    });
+})();
+</script>
+</body>
+
+</html>
