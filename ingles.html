@@ -8,7 +8,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-		<title>WhatsAppHouse &#8211; Tu tarjeta digital tipo web app al alcance de tu bolsillo y directo a tu whatsapp, administrable y 100% para móviles.</title>
+	<title>WhatsAppHouse – Your digital card as a web app within reach, sent directly to your WhatsApp, manageable and 100% mobile-friendly.</title>
 <meta name='robots' content='max-image-preview:large' />
 <meta name="theme-color" content="#000000">
 <style>
@@ -857,6 +857,26 @@ var xoo_aff_localize = {"adminurl":"https://wh.idcardqr.com/wp-admin/admin-ajax.
         .media-frame {
             animation: whSlideIn 0.25s ease;
         }
+         .lang select {
+  padding: 5px;
+  background-color: #001f3f;
+  color: white;
+  border: none;
+}
+
+/* 📲 Tablets problemáticos */
+@media (max-width: 768px) {
+  .lang select {
+    margin-top: 20px; /* 🔽 lo baja */
+  }
+}
+
+/* 📱 Celulares */
+@media (max-width: 480px) {
+  .lang select {
+    margin-top: 30px; /* 🔽 más abajo para que no tape texto */
+  }
+}
     </style>
     <!-- Analytics by WP Statistics - https://wp-statistics.com -->
 <meta name="generator" content="Elementor 3.35.0; features: e_font_icon_svg, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-swap">
@@ -877,27 +897,7 @@ var xoo_aff_localize = {"adminurl":"https://wh.idcardqr.com/wp-admin/admin-ajax.
 						background-image: none !important;
 					}
 				}
-                /** End Block Kit CSS: 72-3-34d2cc762876498c8f6be5405a48e6e2 **/
-.lang select {
-  padding: 5px;
-  background-color: #001f3f;
-  color: white;
-  border: none;
-}
-
-/* 📲 Tablets problemáticos */
-@media (max-width: 768px) {
-  .lang select {
-    margin-top: 20px; /* 🔽 lo baja */
-  }
-}
-
-/* 📱 Celulares */
-@media (max-width: 480px) {
-  .lang select {
-    margin-top: 30px; /* 🔽 más abajo para que no tape texto */
-  }
-}
+               
 </style>
 <!--esta es la imagen inicial del logo  en el navegador -->
 <link rel="icon" href="logo-192.png" sizes="32x32" />
@@ -908,7 +908,6 @@ var xoo_aff_localize = {"adminurl":"https://wh.idcardqr.com/wp-admin/admin-ajax.
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#000000">
 	</head>
-<!-- aqui empieza el logo que abre con casa de whatsapp house-->
 <!-- aqui empieza el logo que abre con casa de whatsapp house-->
 <body  class="home wp-singular page-template page-template-elementor_header_footer page page-id-10 wp-theme-neve ehf-header ehf-footer ehf-template-neve ehf-stylesheet-neve  nv-blog-grid nv-sidebar-full-width menu_sidebar_slide_left elementor-default elementor-template-full-width elementor-kit-6 elementor-page elementor-page-10" id="neve_body"  >
 <!-- Preloader WatsHouse -->
@@ -928,35 +927,35 @@ var xoo_aff_localize = {"adminurl":"https://wh.idcardqr.com/wp-admin/admin-ajax.
         <h1 class="watshouse-title">WhatsHouse</h1>
 
         <p class="watshouse-description">
-            Tarjeta digital + catálogo de propiedades
+            Tarjeta digital +  Ciudad  Maderas
             <span class="watshouse-loading-dots">
                 <span>.</span><span>.</span><span>.</span>
             </span>
         </p>
 
-        <!-- SELECTOR DE IDIOMA (AQUI VA debajo de CD Maderas) -->
-         <div>Elige el idioma</div>
+        <!-- SELECTOR DE IDIOMA -->
+     <div>Elige el idioma</div>
         <div class="lang">
             <select id="lang">
+                 <option value="en">EN</option>
                 <option value="es">ES</option>
-                <option value="en">EN</option>
-                
+               
+               
             </select>
         </div>
 
     </div>
 </div>
 <div class="wrapper">
-	
 <header class="header">
 	<a class="neve-skip-link show-on-focus" href="#content">
-		Saltar al contenido
+		 Skip to content
 	</a>
 
 	<header id="masthead" itemscope="itemscope" itemtype="https://schema.org/WPHeader">
 		<p class="main-title bhf-hidden" itemprop="headline">
 			<a href="https://wh.idcardqr.com" title="Dynah Gómez Bienes Raíces" rel="home">
-				Dynah Gómez Bienes Raíces
+				Dynah Gómez Real Estate
 			</a>
 		</p>
 
@@ -1110,7 +1109,7 @@ var xoo_aff_localize = {"adminurl":"https://wh.idcardqr.com/wp-admin/admin-ajax.
     <h2>Dynah Gomez</h2>
 
     <div class="wh-role">
-        Asesor Inmobiliario CD Maderas
+  Real Estate Advisor at CD Maderas
        
     </div>
 
@@ -1141,24 +1140,24 @@ var xoo_aff_localize = {"adminurl":"https://wh.idcardqr.com/wp-admin/admin-ajax.
 
 <div class="wh-categories-section">
     <div class="wh-categories-slider">
-        <div class="wh-category-item wh-active" data-category="all">Todas</div>
-        <div class="wh-category-item" data-category="casas">Casas</div>
-        <div class="wh-category-item" data-category="terrenos">Terrenos</div>
-        <div class="wh-category-item" data-category="comercial">Comercial</div>
-        <div class="wh-category-item" data-category="promocionales">Promocionales</div>
+       <div class="wh-category-item wh-active" data-category="all">All</div>
+        <div class="wh-category-item" data-category="casas">Houses</div>
+        <div class="wh-category-item" data-category="terrenos">Land</div>
+        <div class="wh-category-item" data-category="comercial">Commercial</div>
+        <div class="wh-category-item" data-category="promocionales">Promotional</div>
     </div>
 </div>
 
         <div class="wh-properties-container" id="whPropertiesContainer"></div>
         <div class="wh-load-more-container wh-hidden" id="whLoadMoreContainer">
-            <button class="wh-btn-load-more" onclick="whLoadMoreProperties()">Detalles</button>
+           <button class="wh-btn-load-more" onclick="whLoadMoreProperties()">Details</button>
         </div>
 
         
                 <div id="whQRModal" class="wh-modal">
             <div class="wh-modal-content" style="max-width: 400px;">
                 <div class="wh-modal-header">
-                    <h3>Escanear Código QR</h3>
+                    <h3>Scan QR Code</h3>
                     <button class="wh-close-modal" onclick="whCloseModal('whQRModal')">&times;</button>
                 </div>
                 <div class="wh-modal-body" style="text-align: center;">
@@ -1170,7 +1169,7 @@ var xoo_aff_localize = {"adminurl":"https://wh.idcardqr.com/wp-admin/admin-ajax.
         <div id="whInfoModal" class="wh-modal">
             <div class="wh-modal-content">
                 <div class="wh-modal-header">
-                    <h3>Información Completa</h3>
+                    <h3>Full Information</h3>
                     <button class="wh-close-modal" onclick="whCloseModal('whInfoModal')">&times;</button>
                 </div>
                 <div class="wh-modal-body" id="whModalInfoContent"></div>
@@ -1180,27 +1179,27 @@ var xoo_aff_localize = {"adminurl":"https://wh.idcardqr.com/wp-admin/admin-ajax.
         <div id="whContactModal" class="wh-modal">
             <div class="wh-modal-content">
                 <div class="wh-modal-header">
-                    <h3>Contactar por WhatsApp</h3>
+                    <h3>Contact on WhatsApp</h3>
                     <button class="wh-close-modal" onclick="whCloseModal('whContactModal')">&times;</button>
                 </div>
                 <div class="wh-modal-body">
                     <form id="whContactForm">
                         <input type="hidden" id="whatshouse_email_nonce" value="170ba9e542">
                         <div class="wh-form-group">
-                            <label>Nombre *</label>
+                            <label>Name*</label>
                             <input type="text" id="whContactName" required placeholder="Tu nombre completo">
                         </div>
                         <div class="wh-form-group">
-                            <label>Correo *</label>
+                            <label>Email*</label>
                             <input type="email" id="whContactEmail" required placeholder="tu@email.com">
                         </div>
                         <div class="wh-form-group">
-                            <label>Teléfono *</label>
+                            <label>Phone *</label>
                             <input type="tel" id="whContactPhone" required placeholder="+52 55 1234 5678">
                         </div>
                         <input type="hidden" id="whPropertyData">
                         <button type="submit" class="wh-btn wh-btn-whatsapp" style="width: 100%; margin-top: 10px;">
-                            <i class="fab fa-whatsapp"></i> Me interesa
+                            <i class="fab fa-whatsapp"></i> I'm interested
                         </button>
                     </form>
                 </div>
@@ -1354,7 +1353,7 @@ let whDisplayedCount = 36;
 
 document.addEventListener("DOMContentLoaded", function(){
 
-fetch("propiedades.json")
+fetch("propiedadesin.json")
 .then(response => response.json())
 .then(data => {
 
@@ -1519,10 +1518,10 @@ fetch("propiedades.json")
                 '<p class="wh-property-description">' + property.descripcion_corta + '</p>' +
                 '<div class="wh-property-actions">' +
                 '<button class="wh-btn wh-btn-info" onclick="whShowInfo(' + property.id + ')">' +
-                'Detalles' +
+                'Details' +
                 '</button>' +
                 '<button class="wh-btn wh-btn-whatsapp" onclick="whShowContact(' + property.id + ')">' +
-                '<i class="fab fa-whatsapp"></i> Me interesa' +
+                '<i class="fab fa-whatsapp"></i> I’m interested'+
                 '</button>' +
                 '</div>' +
                 '</div>' +
@@ -1547,8 +1546,8 @@ fetch("propiedades.json")
             modalHTML += '<div class="wh-info-row"><div class="wh-info-label">Descripción</div><div class="wh-info-value">' + descripcionHTML + '</div></div>';
             modalHTML += '<div class="wh-info-row"><div class="wh-info-label">ID Propiedad</div><div class="wh-info-value">' + (property.id_custom || 'ID-' + property.id) + '</div></div>';
             
-            modalHTML += '<button class="wh-btn wh-btn-whatsapp" onclick="whShowContact(' + property.id + ')" style="width: 100%; margin-top: 20px;">' +
-                '<i class="fab fa-whatsapp"></i> Me interesa' +
+          modalHTML += '<button class="wh-btn wh-btn-whatsapp" onclick="whShowContact(' + property.id + ')" style="width: 100%; margin-top: 20px;">' +
+                '<i class="fab fa-whatsapp"></i> I\'m interested' +
                 '</button>';
             
             content.innerHTML = modalHTML;
@@ -2174,12 +2173,12 @@ const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(
             <!-- Botón 1: Scroll to Top -->
             <button class="wh-menu-btn" onclick="whScrollToTop()" title="Inicio" aria-label="Ir al inicio">
                 <i class="fas fa-home"></i>
-                <span class="wh-menu-label">Inicio</span>
+                <span class="wh-menu-label">Home</span>
             </button>
         <!-- Botón 2: Teléfono -->
         <a href="tel:3343340062" class="wh-menu-btn" title="Llamar" aria-label="Llamar por teléfono">
             <i class="fas fa-phone"></i>
-            <span class="wh-menu-label">Llamar</span>
+            <span class="wh-menu-label">Call</span>
         </a>
         
         <!-- Botón 3: WhatsApp -->
@@ -2192,13 +2191,13 @@ const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(
         <!-- Botón 4: Compartir -->
         <button class="wh-menu-btn" onclick="whToggleShare()" title="Compartir" aria-label="Compartir página">
             <i class="fas fa-share-alt"></i>
-            <span class="wh-menu-label">Compartir</span>
+            <span class="wh-menu-label">Share</span>
         </button>
         
         <!-- Botón 5: Menú -->
         <button class="wh-menu-btn" onclick="whToggleMenu()" title="Menú" aria-label="Abrir menú">
             <i class="fas fa-bars"></i>
-            <span class="wh-menu-label">Menú</span>
+            <span class="wh-menu-label">Menu</span>
         </button>
         
     </div>
@@ -2215,7 +2214,7 @@ const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(
 <div id="whSharePanel" class="wh-share-panel">
     <div class="wh-share-content">
         <div class="wh-share-header">
-           <h4>Compartir página</h4>
+           <h4>Share page</h4>
             <button class="wh-share-close" onclick="whToggleShare()" aria-label="Cerrar">×</button>
         </div>
         <div class="wh-share-buttons">
@@ -2247,7 +2246,7 @@ const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(
             <button onclick="whCopyLink('https://www.facebook.com/dana.montoya.9843?locale=es_LA', 'Propiedades de DYNAH GOMEZ')" 
                     class="wh-share-btn wh-share-copy" aria-label="Copiar enlace">
                 <i class="fas fa-link"></i>
-                <span>Copiar enlace</span>
+                <span>Copy link</span>
             </button>
 
         </div>
@@ -2258,7 +2257,7 @@ const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(
 <div id="whMenuPanel" class="wh-menu-panel">
     <div class="wh-menu-content">
         <div class="wh-menu-header">
-            <h4>Menú</h4>
+            <h4>Menu</h4>
             <button class="wh-menu-close" onclick="whToggleMenu()" aria-label="Cerrar menú">×</button>
         </div>
         
@@ -2266,47 +2265,47 @@ const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(
         <div class="wh-menu-options">
             <button class="wh-option-btn" onclick="whToggleDarkMode()" aria-label="Cambiar modo oscuro/claro">
                 <i class="fas fa-moon" id="whDarkModeIcon"></i>
-                <span id="whDarkModeText">Modo Oscuro</span>
+                <span id="whDarkModeText">Dark Mode</span>
             </button>
             
             <button class="wh-option-btn" onclick="whToggleMinimize()" aria-label="Minimizar menú">
                 <i class="fas fa-compress-alt"></i>
-                <span>Minimizar</span>
+                <span>Minimize</span>
             </button>
         </div>
         
         <!-- Categorías -->
         <div class="wh-menu-categories">
-            <h5>Filtrar propiedades</h5>
+            <h5>Filter properties</h5>
             <div class="wh-categories-list">
 
                 <button class="wh-category-btn wh-active" data-category="all" onclick="whFilterCategory('all')">
                     <i class="fas fa-th"></i>
-                    <span>Todas las propiedades</span>
+                    <span>All properties</span>
                 </button>
 
               
 
                 <button class="wh-category-btn" data-category="casas" onclick="whFilterCategory('casas')">
                     <i class="fas fa-folder"></i>
-                    <span>Casas</span>
+                    <span>Houses</span>
                 </button>
 
                 <button class="wh-category-btn" data-category="terrenos" onclick="whFilterCategory('terrenos')">
                     <i class="fas fa-folder"></i>
-                    <span>Terrenos</span>
+                    <span>Land</span>
                 </button>
 
                 <button class="wh-category-btn" data-category="comercial" onclick="whFilterCategory('comercial')">
                     <i class="fas fa-folder"></i>
-                    <span>Comercial</span>
+                    <span>Commercial</span>
                 </button>
 
                 
 
                 <button class="wh-category-btn" data-category="promocionales" onclick="whFilterCategory('promocionales')">
                     <i class="fas fa-folder"></i>
-                    <span>Promocionales</span>
+                    <span>Promotional</span>
                 </button>
 
             </div>
@@ -2896,7 +2895,7 @@ window.whFilterCategory = function(category) {
         
         // ===== COPIAR ENLACE =====
         window.whCopyLink = function(url, title) {
-            const textToCopy = '🏠 ' + title + ' - Conoce más propiedades y detalles en: ' + url;
+            const textToCopy = '🏠 ' + title + ' - Discover more properties and details: ' + url;
             
             if (navigator.clipboard && navigator.clipboard.writeText) {
                 navigator.clipboard.writeText(textToCopy).then(() => {
@@ -3357,15 +3356,15 @@ background: linear-gradient(135deg, #11998e, #38ef7d);
     <div class="chat-bubble-avatar">
       <img src="https://ariapsa.com/wp-content/uploads/2025/11/ariapsa-gif.gif">
     </div>
-    <span class="chat-bubble-name">¡Puedo ayudarte!</span>
+    <span class="chat-bubble-name">I can help you!</span>
   </div>
 
   <div class="chat-bubble-message" id="bubbleMessage">
-    ¡Hola! 👋 ¿Qué servicios estás buscando hoy?
+    Hello! 👋 What services are you looking for today?
   </div>
 
   <div class="chat-bubble-typing" id="bubbleTyping">
-    Escribiendo...
+   Typing...
   </div>
 
 </div>
@@ -3375,19 +3374,19 @@ background: linear-gradient(135deg, #11998e, #38ef7d);
 
 <div id="popup" class="popup">
 <button class="btn-cerrar" onclick="closePopup()">✕</button>
-<h3>Contáctanos por WhatsApp</h3>
-<p>Selecciona una opción:</p>
-<button onclick="enviarOpcion(1)">📍 Me interesa cotizar terrenos en Ciudad Maderas</button>
+<h3>Contact us on WhatsApp</h3>
+<p>Select an option:</p>
+<button onclick="enviarOpcion(1)">📍 I am interested in getting a quote for land in Ciudad Maderas</button>
 
-<button onclick="enviarOpcion(2)">🏡 Me interesa cotizar casas en Ciudad Maderas</button>
+<button onclick="enviarOpcion(2)">🏡 I am interested in getting a quote for houses in Ciudad Maderas</button>
 
-<button onclick="enviarOpcion(3)">📍 Me interesa ver opciones disponibles en mi zona</button>
+<button onclick="enviarOpcion(3)">📍 I am interested in seeing available options in my area</button>
 
-<button onclick="enviarOpcion(4)">💰 Me interesa información de precios y financiamiento</button>
+<button onclick="enviarOpcion(4)">💰 I am interested in information about prices and financing</button>
 
-<button onclick="enviarOpcion(5)">👤 Me interesa hablar con un asesor</button>
+<button onclick="enviarOpcion(5)">👤 I am interested in speaking with an advisor</button>
 
-<button onclick="enviarOpcion(6)">📅 Me interesa agendar una cita</button>
+<button onclick="enviarOpcion(6)">📅 I am interested in scheduling an appointment</button>
 </div>
 
 <!-- ===== SCRIPT ===== -->
@@ -3404,11 +3403,11 @@ document.addEventListener("DOMContentLoaded", function() {
   var bubbleTimeout;
 
   var messages = [
-    '¡Hola! 👋 Gracias por tu interés en Ciudad Maderas',
-    '🏡 Ya viste opciones disponibles, ahora puedo ayudarte a encontrar la que mejor se adapte a ti',
-    '📍 Te comparto ubicaciones exactas, disponibilidad real y detalles actualizados',
-    '💰 Además, te doy cotización personalizada según el desarrollo o modelo que te interese',
-    '📩 Escríbeme y con gusto te paso la información completa'
+    'Hello! 👋 Thank you for your interest in Ciudad Maderas',
+'🏡 You’ve already seen available options, now I can help you find the one that best suits you',
+'📍 I’ll share exact locations, real availability, and updated details',
+'💰 I can also provide you with a personalized quote based on the development or model you’re interested in',
+'📩 Message me and I’ll gladly send you the complete information'
   ];
 
   // Función para mostrar popup
@@ -3464,12 +3463,12 @@ function enviarOpcion(opcion) {
   var numero = '5213343340062';
 
   var mensajes = {
-    1: '¡Hola! 👋 Me interesa cotizar terrenos en Ciudad Maderas.',
-  2: '¡Hola! 👋 Me interesa cotizar casas en Ciudad Maderas.',
-  3: '¡Hola! 👋 Me interesa ver opciones disponibles en mi zona.',
-  4: '¡Hola! 👋 Me interesa información de precios y financiamiento.',
-  5: '¡Hola! 👋 Me interesa hablar con un asesor.',
-  6: '¡Hola! 👋 Me interesa agendar una cita.'
+   1: 'Hello! 👋 I am interested in getting a quote for land in Ciudad Maderas.',
+2: 'Hello! 👋 I am interested in getting a quote for houses in Ciudad Maderas.',
+3: 'Hello! 👋 I am interested in seeing available options in my area.',
+4: 'Hello! 👋 I am interested in information about prices and financing.',
+5: 'Hello! 👋 I am interested in speaking with an advisor.',
+6: 'Hello! 👋 I am interested in scheduling an appointment.'
   };
 
   var mensaje = mensajes[opcion];
