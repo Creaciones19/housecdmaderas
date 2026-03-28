@@ -1,10 +1,10 @@
 {
-  "name": "Tu Empresa",
-  "short_name": "Empresa",
-  "start_url": "/",
+  "name": "Dynah Gómez Bienes Raíces",
+  "short_name": "Dynah",
+  "start_url": "/tarjeta--de--presentaci-n-asesor/",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#000000",
+  "background_color": "#ffffff",
   "icons": [
     {
       "src": "logo-192.png",
