@@ -158,8 +158,7 @@
 "descripcion_corta": "From 112.00 m²",
 "descripcion_completa": "Ciudad Maderas in Querétaro has several developments located in strategic areas of the state.\n• El Marqués: Ciudad Maderas Querétaro and Ciudad Maderas Montaña, mainly focused on investment, close to industrial parks and the airport.\n• Corregidora: Ciudad Maderas Corregidora and Ciudad Maderas Bosques, with better connectivity, services, and a stronger residential focus.\n• North Zone / Expansion: Ciudad Maderas Norte, aimed at long-term investment with affordable prices and progressive development.\n• South Zone: Ciudad Maderas Sur, composed of different residential clusters with shared amenities.\nAll developments offer residential lots with a clubhouse, direct financing, and a focus on medium- and long-term value appreciation.",
   "pdf_url": [
-    "https://storage.googleapis.com/comercializacioncrm_bucket/presentacion_venta__20251031_133314.pdf",
-    "https://storage.googleapis.com/comercializacioncrm_bucket/presentacion_venta__20251031_132903.pdf",
+      "https://storage.googleapis.com/comercializacioncrm_bucket/presentacion_venta__20251031_132903.pdf",
     "https://storage.googleapis.com/comercializacioncrm_bucket/presentacion_venta__20251031_133024.pdf",
     "https://storage.googleapis.com/comercializacioncrm_bucket/presentacion_venta__20251031_132145.pdf",
     "https://storage.googleapis.com/comercializacioncrm_bucket/presentacion_venta__20251031_133301.pdf"
@@ -184,8 +183,7 @@
   
     "https://storage.googleapis.com/comercializacioncrm_bucket/presentacion_venta__20251031_132626.pdf",
      "https://storage.googleapis.com/comercializacioncrm_bucket/presentacion_venta__20251031_132558.pdf",
-   "https://storage.googleapis.com/comercializacioncrm_bucket/presentacion_venta__20251218_091028.pdf",
-   "https://storage.googleapis.com/comercializacioncrm_bucket/presentacion_venta__20251031_132425.pdf"
+     "https://storage.googleapis.com/comercializacioncrm_bucket/presentacion_venta__20251031_132425.pdf"
   ],
 
   "pdf_file": ""
@@ -335,6 +333,50 @@
 },
 {
   "id": 17,
+  "imagen": "miguel.png",
+  "imagen_modal": "https://storage.moduly.app/cards/UUog13nO1gNHVXQUxVpj/assets/a19cbdba-5c20-486d-a11c-c0ca143c878a.png",
+ "titulo": "Land in Ciudad Maderas San Miguel de Allende",
+"id_custom": "TERRENO-008",
+"categoria": "terrenos",
+"precio_tipo": "precio",
+"precio": "From $582,400 MXN",
+"descripcion_corta": "From 144 m2 to 300 m2",
+"descripcion_completa": "Ciudad Maderas in San Miguel de Allende is a development located in one of the most recognized and high-value growth areas worldwide, ideal for investment and asset growth.\n• Hacienda Maderas San Miguel de Allende: residential development with an excellent location just 3.5 km from downtown, close to vineyards, services, and key points of the region.\n• Project with over 20 amenities, 24/7 security, controlled access, and fully urbanized services.\nThe development offers residential lots with financing up to 240 months, monthly payments from $2,100 MXN, and the option to secure your lot from $5,000 MXN, providing an excellent opportunity to invest or build in the future.",
+  "galeria_url": "https://ciudadmaderasdesarrollos.com/",
+
+  "map_url": "https://maps.app.goo.gl/uixecFDFDmpNq3TdA",
+  "map_tipo": "link",
+
+  "pdf_url": [
+    "sanmiguel.pdf",
+    "sanmiguel1.pdf"
+  ],
+
+  "pdf_file": ""
+},
+{
+  "id": 18,
+  "imagen": "https://storage.moduly.app/cards/UUog13nO1gNHVXQUxVpj/assets/2F960b5bce-306e-47a8-ae22-a82506b9126a.jpg",
+  "imagen_modal": "peninsula.png",
+ "titulo": "Land in Ciudad Maderas Hacienda Península",
+"id_custom": "TERRENO-009",
+"categoria": "terrenos",
+"precio_tipo": "precio",
+"precio": "From $582,400 MXN",
+"descripcion_corta": "From 112 m2 to 300 m2",
+"descripcion_completa":  "Ciudad Maderas in Mérida, Yucatán is a development located in one of the fastest-growing and safest regions in Mexico, ideal for investment and asset growth.\n• Ciudad Maderas Hacienda Península: premium residential development with a strategic location near the beach and just minutes from Mérida, close to key attractions, services, and growth areas.\n• Project with exclusive amenities, 24/7 security, controlled access, and fully urbanized infrastructure.\nThe development offers residential lots with direct financing up to 240 months, monthly payments from $2,352 MXN, and the option to secure your lot from $5,000 MXN, providing an excellent opportunity to invest or build in the future.",
+  "galeria_url": "https://ciudadmaderasdesarrollos.com/",
+
+  "map_url": "https://maps.app.goo.gl/qKxrDKNVNPd4oPxQ7",
+  "map_tipo": "link",
+ "pdf_url": [
+  "peninsula.pdf"
+],
+
+  "pdf_file": "peninsula.pdf"
+},
+{
+  "id": 19,
   "imagen": "promociones (2).png",
   "imagen_modal": "promociones (1).png",
   "titulo": "Ciudad Maderas",
@@ -351,7 +393,7 @@
  
 },
 {
-  "id": 18,
+  "id": 20,
   "imagen": "promo2.png",
   "imagen_modal": "promo (1).png",
  "titulo": "Ciudad Maderas Corregidora",

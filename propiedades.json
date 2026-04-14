@@ -159,7 +159,6 @@
   "descripcion_completa": "Ciudad Maderas en Querétaro cuenta con diversos desarrollos ubicados en zonas estratégicas del estado.\n• El Marqués: Ciudad Maderas Querétaro y Ciudad Maderas Montaña, enfocados principalmente a inversión, con cercanía a parques industriales y aeropuerto.\n• Corregidora: Ciudad Maderas Corregidora y Ciudad Maderas Bosques, con mejor conectividad, servicios y mayor enfoque habitacional.\n• Zona Norte / Expansión: Ciudad Maderas Norte, orientado a inversión a largo plazo con precios accesibles y desarrollo progresivo.\n• Zona Sur: Ciudad Maderas Sur, compuesto por diferentes clusters residenciales con amenidades compartidas.\nTodos los desarrollos manejan lotes residenciales con casa club, financiamiento directo y enfoque en plusvalía a mediano y largo plazo.",
   
   "pdf_url": [
-    "https://storage.googleapis.com/comercializacioncrm_bucket/presentacion_venta__20251031_133314.pdf",
     "https://storage.googleapis.com/comercializacioncrm_bucket/presentacion_venta__20251031_132903.pdf",
     "https://storage.googleapis.com/comercializacioncrm_bucket/presentacion_venta__20251031_133024.pdf",
     "https://storage.googleapis.com/comercializacioncrm_bucket/presentacion_venta__20251031_132145.pdf",
@@ -184,10 +183,9 @@
   
   "pdf_url": [
   
-    "https://storage.googleapis.com/comercializacioncrm_bucket/presentacion_venta__20251031_132626.pdf",
+   "https://storage.googleapis.com/comercializacioncrm_bucket/presentacion_venta__20251031_132626.pdf",
      "https://storage.googleapis.com/comercializacioncrm_bucket/presentacion_venta__20251031_132558.pdf",
-   "https://storage.googleapis.com/comercializacioncrm_bucket/presentacion_venta__20251218_091028.pdf",
-   "https://storage.googleapis.com/comercializacioncrm_bucket/presentacion_venta__20251031_132425.pdf"
+     "https://storage.googleapis.com/comercializacioncrm_bucket/presentacion_venta__20251031_132425.pdf"
   ],
 
   "pdf_file": ""
@@ -342,6 +340,50 @@
 },
 {
   "id": 17,
+  "imagen": "miguel.png",
+  "imagen_modal": "https://storage.moduly.app/cards/UUog13nO1gNHVXQUxVpj/assets/a19cbdba-5c20-486d-a11c-c0ca143c878a.png",
+  "titulo": "Terreno en Ciudad Maderas San Miguel de Allende",
+  "id_custom": "TERRENO-008",
+  "categoria": "terrenos",
+  "precio_tipo": "precio",
+  "precio": "Desde $582,400 MXN",
+  "descripcion_corta": "Desde 144 m2 hasta 300 m2",
+  "descripcion_completa": "Ciudad Maderas en San Miguel de Allende es un desarrollo ubicado en una de las zonas con mayor reconocimiento y plusvalía a nivel mundial, ideal para inversión y crecimiento patrimonial.\n• Hacienda Maderas San Miguel de Allende: desarrollo residencial con excelente ubicación a solo 3.5 km del centro, cercano a viñedos, servicios y puntos clave de la región.\n• Proyecto con más de 20 amenidades, seguridad 24/7, acceso controlado y servicios totalmente urbanizados.\nEl desarrollo ofrece lotes residenciales con financiamiento hasta por 240 meses, mensualidades desde $2,100 MXN y la posibilidad de bloquear tu lote desde $5,000 pesos, brindando una excelente oportunidad para invertir o construir a futuro.",
+  "galeria_url": "https://ciudadmaderasdesarrollos.com/",
+ "map_url": "https://maps.app.goo.gl/uixecFDFDmpNq3TdA",
+  "map_tipo": "link",
+
+  "pdf_url": [
+    "sanmiguel.pdf",
+    "sanmiguel1.pdf"
+  ],
+
+  "pdf_file": ""
+},
+{
+  "id": 18,
+  "imagen": "https://storage.moduly.app/cards/UUog13nO1gNHVXQUxVpj/assets/2F960b5bce-306e-47a8-ae22-a82506b9126a.jpg",
+  "imagen_modal": "peninsula.png",
+  "titulo": "Terreno en Ciudad Maderas Hacienda Península",
+  "id_custom": "TERRENO-009",
+  "categoria": "terrenos",
+  "precio_tipo": "precio",
+  "precio": "Desde $582,400 MXN",
+  "descripcion_corta": "Desde 112 m2 hasta 300 m2",
+  "descripcion_completa": "Ciudad Maderas en Mérida, Yucatán es un desarrollo ubicado en una de las zonas con mayor crecimiento y seguridad en México, ideal para inversión y crecimiento patrimonial.\n• Ciudad Maderas Hacienda Península: desarrollo residencial premium con ubicación estratégica cerca de la playa y a minutos de Mérida, cercano a puntos clave, servicios y zonas de crecimiento.\n• Proyecto con amenidades exclusivas, seguridad 24/7, acceso controlado y servicios totalmente urbanizados.\nEl desarrollo ofrece lotes residenciales con financiamiento directo hasta por 240 meses, mensualidades desde $2,352 MXN y la posibilidad de bloquear tu lote desde $5,000 pesos, brindando una excelente oportunidad para invertir o construir a futuro.",
+    "galeria_url": "https://ciudadmaderasdesarrollos.com/",
+
+  "map_url": "https://maps.app.goo.gl/qKxrDKNVNPd4oPxQ7",
+  "map_tipo": "link",
+
+ "pdf_url": [
+  "peninsula.pdf"
+],
+
+  "pdf_file": "peninsula.pdf"
+},
+{
+  "id": 19,
   "imagen": "promociones (2).png",
   "imagen_modal": "promociones (1).png",
   "titulo": "Ciudad Maderas",
@@ -349,17 +391,13 @@
   "categoria": "promocionales",
   "precio_tipo": "precio",
   "precio": "La desarrolladora más grande de México",
-  "descripcion_corta": "Mas de 40 años construyendo en Mexico",
-  "descripcion_completa": "Con presencia en México y Estados Unidos, contamos con más de 34 proyectos activos en estados clave como Querétaro, Jalisco, Yucatán y Nuevo León, entre otros. Llevamos más de 40 años desarrollando comunidades residenciales y comerciales con plusvalía garantizada.Ciudad Maderas es reconocida por inversionistas con experiencia que buscan rentabilidad real, respaldo legal y financiamiento accesible.",
-
+  "descripcion_corta": "Más de 40 años construyendo en México",
+  "descripcion_completa": "Con presencia en México y Estados Unidos, contamos con más de 34 proyectos activos en estados clave como Querétaro, Jalisco, Yucatán y Nuevo León, entre otros. Tenemos más de 40 años desarrollando comunidades residenciales y comerciales con plusvalía garantizada. Ciudad Maderas es reconocida por inversionistas experimentados que buscan rentabilidad real, respaldo legal y financiamiento accesible.",
   "galeria_url": "https://ciudadmaderasdesarrollos.com/",
-
-  
- "pdf_url":"2505-BROCHURE-INTERACTIVO-CASAS.pdf"
- 
+  "pdf_url": "2505-BROCHURE-INTERACTIVO-CASAS.pdf"
 },
 {
-  "id": 18,
+  "id": 20,
   "imagen": "promo2.png",
   "imagen_modal": "promo (1).png",
   "titulo": "Ciudad Maderas Corregidora",
